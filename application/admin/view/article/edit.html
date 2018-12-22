@@ -8,11 +8,11 @@
         <div class="layui-input-block">
           <select name="cid" lay-verify="required">
             {volist name="acates" id="vo"}
-              {if condition="$vo.id==$article.cid"}
-              <option value="{$vo.id}" selected>{$vo.name}</option>
-              {else}
-              <option value="{$vo.id}">{$vo.name}</option>
-              {/if}
+            {if condition="$vo.id==$article.cid"}
+            <option value="{$vo.id}" selected>{$vo.name}</option>
+            {else}
+            <option value="{$vo.id}">{$vo.name}</option>
+            {/if}
             {/volist}
           </select>
         </div>
@@ -23,13 +23,15 @@
       <div class="layui-form-item">
         <label class="layui-form-label">标题</label>
         <div class="layui-input-block">
-          <input type="text" name="title" value="{$article.title}" required lay-verify="required" autocomplete="off" class="layui-input">
+          <input type="text" name="title" value="{$article.title}" required lay-verify="required" autocomplete="off"
+            class="layui-input">
         </div>
       </div>
       <div class="layui-form-item">
         <label class="layui-form-label">作者</label>
         <div class="layui-input-block">
-          <input type="text" name="authors" value="{$article.authors}" required lay-verify="required" autocomplete="off" class="layui-input">
+          <input type="text" name="authors" value="{$article.authors}" required lay-verify="required" autocomplete="off"
+            class="layui-input">
         </div>
       </div>
       <div class="layui-form-item">
@@ -42,7 +44,7 @@
         <label class="layui-form-label">封面</label>
         <div class="layui-input-block">
           <img id="curImg" src="{$article.cover}" width="300">
-          <input type="file" id="image-input" placeholder="更换"  autocomplete="off" class="layui-input">
+          <input type="file" id="image-input" placeholder="更换" autocomplete="off" class="layui-input">
           <input type="text" id="image-path" style="display: none" value="{$article.cover}" name="cover">
           <input type="text" value="{$article.id}" style="display: none" name="id">
 
@@ -52,9 +54,9 @@
         <label class="layui-form-label">数据内容</label>
         <div class="layui-input-block">
           <div id="editor">
-              {$article.content}
+            {$article.content}
           </div>
-          <textarea name="content" id="content" class="editor-content"  required lay-verify="required"></textarea>
+          <textarea name="content" id="content" class="editor-content" required lay-verify="required"></textarea>
         </div>
       </div>
 
@@ -67,26 +69,13 @@
     </form>
   </div>
 </div>
-
-<script src="/static/vendor/wangeditor/wangEditor.js"></script>
 <script type="text/javascript">
-  $(".editor-content").hide()
-  var E = window.wangEditor
-  var editor = new E('#editor')
-  var $text1 = $('#content')
-  editor.customConfig.onchange = function (html) {
-    // 监控变化，同步更新到 textarea
-    $text1.val(html)
-  }
-  editor.create()
-  // 初始化 textarea 的值
-  $text1.val(editor.txt.html())
 
   layui.use('form', function () {
     var form = layui.form;
   });
-
   $(document).ready(e => {
+    setEditor()
     $("#image-input").change(e => {
       $("#curImg").hide()
       let file = document.getElementById("image-input")
@@ -95,14 +84,14 @@
       $.ajax({
         url: '/common/upload/go',
         data: data,
-        processData : false,
-        contentType : false,
-        async:false,
+        processData: false,
+        contentType: false,
+        async: false,
         method: 'post',
         success: res => {
           res = JSON.parse(res)
           console.log(res)
-          if(res.status) {
+          if (res.status) {
             $("#image-path").val(res.url)
           }
         }

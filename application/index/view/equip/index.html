@@ -16,6 +16,14 @@
   <link rel="stylesheet" href="__INDEX__/custom/css/acm.css">
   <link rel="stylesheet" href="__INDEX__/custom/css/new.css">
   <style>
+    .layui-laypage a, .layui-laypage span {
+      background-color: inherit;
+    }
+    .layui-laypage button {
+      background-color: #009688;
+      color: #fff;
+    }
+    .layui-table-tool {padding-left: 5px;}
     .layui-table-tool-temp {
       display: none;
     }
@@ -214,7 +222,15 @@
               },
             ]
           ],
-          page: true
+          page: true,
+          limit: 50,
+          limits: [50, 200, 500, 1000, 5000, 10000],
+          done: e => {
+            console.log()
+            $(".layui-table-tool .layui-laypage").remove()
+            if($(".layui-table-page .layui-laypage"))
+              $(".layui-table-tool").prepend($(".layui-table-page .layui-laypage"))
+          }
         });
       })
     }

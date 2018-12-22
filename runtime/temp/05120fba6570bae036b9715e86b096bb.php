@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:90:"/Users/iimt/Development/PHP/corrosion/public/../application/index/view/realtime/index.html";i:1544246008;s:79:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/header.html";i:1542099950;s:76:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/nav.html";i:1541485910;s:79:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/footer.html";i:1542023940;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:90:"/Users/iimt/Development/PHP/corrosion/public/../application/index/view/realtime/index.html";i:1545461941;s:79:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/header.html";i:1542099950;s:76:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/nav.html";i:1541485910;s:79:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/footer.html";i:1542023940;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -180,10 +180,10 @@
             <p id="device_test_location">---</p>
           </div>
           <div class="classify">
-            <img src="/static/index/custom/images/a60.png" alt="" /><span>腐蚀等级</span><span>C2</span>
+            <img src="/static/index/custom/images/a60.png" alt="" /><span>腐蚀等级</span><span id="corr_level">C2</span>
           </div>
           <div class="classify">
-            <img src="/static/index/custom/images/a61.png" alt="" /><span>腐蚀速率</span><span>0.05mm/a</span>
+            <img src="/static/index/custom/images/a61.png" alt="" /><span>腐蚀速率</span><span id="corr_speed">0.05mm/a</span>
           </div>
           <div class="classify">
             <img src="/static/index/custom/images/a62.png" alt="" /><span>相对湿度</span><span id="device_h">--</span>
@@ -415,6 +415,9 @@
         dataType: "json",
         success: res => {
           let val = ""
+          console.log("device")
+          console.log(res)
+          let i1 = res.i1
           for (var i in res) {
             val = res[i] == "null" ? "无" : res[i]
             $("#device_" + i).html(val)

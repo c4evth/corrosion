@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:87:"/Users/iimt/Development/PHP/corrosion/public/../application/admin/view/bdata/index.html";i:1541667134;s:79:"/Users/iimt/Development/PHP/corrosion/application/admin/view/public/header.html";i:1542238450;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:87:"/Users/iimt/Development/PHP/corrosion/public/../application/admin/view/bdata/index.html";i:1541667136;s:79:"/Users/iimt/Development/PHP/corrosion/application/admin/view/public/header.html";i:1544172502;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -185,7 +185,20 @@
               <dd data-url='/standard/add'><a>添加标准</a></dd>
               <dd data-url='/standard/import'><a>导入标准</a></dd>
             </dl>
-          </li>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;" class="nav-one">会议管理</a>
+						<dl class="layui-nav-child">
+							<dd data-url='/conference/index'><a>会议列表</a></dd>
+							<dd data-url='/conference/add'><a>添加会议</a></dd>
+							<dd data-url='/conference/addbanner'><a>添加图片</a></dd>
+							<dd data-url='/organization/index'><a>会议涉及组织</a></dd>
+							<dd data-url='/organization/addorg'><a>添加会议组织</a></dd>
+							<dd data-url='/organization/cate'><a>会议组织分类</a></dd>
+							<dd data-url='/organization/addCate'><a>添加组织分类</a></dd>
+							<dd data-url='/enlist/index'><a>报名中心</a></dd>
+						</dl>
+					</li>
           <li class="layui-nav-item">
             <a href="javascript:;" class="nav-one">平台简介管理</a>
             <dl class="layui-nav-child">

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:87:"/Users/iimt/Development/PHP/corrosion/public/../application/index/view/equip/index.html";i:1544597121;s:79:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/header.html";i:1542099950;s:76:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/nav.html";i:1541485910;s:79:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/footer.html";i:1542023940;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:87:"/Users/iimt/Development/PHP/corrosion/public/../application/index/view/equip/index.html";i:1545463515;s:79:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/header.html";i:1542099950;s:76:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/nav.html";i:1541485910;s:79:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/footer.html";i:1542023940;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -17,6 +17,14 @@
   <link rel="stylesheet" href="/static/index/custom/css/acm.css">
   <link rel="stylesheet" href="/static/index/custom/css/new.css">
   <style>
+    .layui-laypage a, .layui-laypage span {
+      background-color: inherit;
+    }
+    .layui-laypage button {
+      background-color: #009688;
+      color: #fff;
+    }
+    .layui-table-tool {padding-left: 5px;}
     .layui-table-tool-temp {
       display: none;
     }
@@ -267,7 +275,15 @@
               },
             ]
           ],
-          page: true
+          page: true,
+          limit: 50,
+          limits: [50, 200, 500, 1000, 5000, 10000],
+          done: e => {
+            console.log()
+            $(".layui-table-tool .layui-laypage").remove()
+            if($(".layui-table-page .layui-laypage"))
+              $(".layui-table-tool").prepend($(".layui-table-page .layui-laypage"))
+          }
         });
       })
     }

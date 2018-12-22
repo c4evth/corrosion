@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:87:"/Users/iimt/Development/PHP/corrosion/public/../application/index/view/basic/index.html";i:1542776250;s:79:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/header.html";i:1542099948;s:76:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/nav.html";i:1541485908;s:79:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/footer.html";i:1542023938;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:87:"/Users/iimt/Development/PHP/corrosion/public/../application/index/view/basic/index.html";i:1545464128;s:79:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/header.html";i:1542099950;s:76:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/nav.html";i:1541485910;s:79:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/footer.html";i:1542023940;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -90,9 +90,8 @@
                         </select>
                     </div>
                     <div class="search2 sc-fl">
-                        
-                            <input type="text" name="search">
-                            <button type="submit">搜索</button>
+                            <input type="text" name="search" value="<?php echo $search; ?>">
+                            <button type="submit" id="doSearch">搜索</button>
                         </div>
                     </form>
                     <img src="/static/index/custom/images/a58.png" alt="" class="zhouqibiao">
@@ -596,11 +595,13 @@
     </script>
 
     <script>
-        $(".squarebox").click(function () {
-            console.log(1)
+        $(".squarebox").click(function (e) {
+            e.preventDefault()
+            let key = $(this).find("a").html()
+            let input = $('.search2 input')
+            input.val(input.val() + " " + key)
+            $("#doSearch").click()
             return
-            let key = $(this).html().toString().trim()
-            window.location.href = "" + key
         })
     </script>
 </body>

@@ -139,10 +139,10 @@
             <p id="device_test_location">---</p>
           </div>
           <div class="classify">
-            <img src="__INDEX__/custom/images/a60.png" alt="" /><span>腐蚀等级</span><span>C2</span>
+            <img src="__INDEX__/custom/images/a60.png" alt="" /><span>腐蚀等级</span><span id="corr_level">C2</span>
           </div>
           <div class="classify">
-            <img src="__INDEX__/custom/images/a61.png" alt="" /><span>腐蚀速率</span><span>0.05mm/a</span>
+            <img src="__INDEX__/custom/images/a61.png" alt="" /><span>腐蚀速率</span><span id="corr_speed">0.05mm/a</span>
           </div>
           <div class="classify">
             <img src="__INDEX__/custom/images/a62.png" alt="" /><span>相对湿度</span><span id="device_h">--</span>
@@ -362,6 +362,9 @@
         dataType: "json",
         success: res => {
           let val = ""
+          console.log("device")
+          console.log(res)
+          let i1 = res.i1
           for (var i in res) {
             val = res[i] == "null" ? "无" : res[i]
             $("#device_" + i).html(val)

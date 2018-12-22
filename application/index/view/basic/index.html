@@ -51,9 +51,8 @@
                         </select>
                     </div>
                     <div class="search2 sc-fl">
-                        
-                            <input type="text" name="search">
-                            <button type="submit">搜索</button>
+                            <input type="text" name="search" value="{$search}">
+                            <button type="submit" id="doSearch">搜索</button>
                         </div>
                     </form>
                     <img src="__INDEX__/custom/images/a58.png" alt="" class="zhouqibiao">
@@ -546,11 +545,13 @@
     </script>
 
     <script>
-        $(".squarebox").click(function () {
-            console.log(1)
+        $(".squarebox").click(function (e) {
+            e.preventDefault()
+            let key = $(this).find("a").html()
+            let input = $('.search2 input')
+            input.val(input.val() + " " + key)
+            $("#doSearch").click()
             return
-            let key = $(this).html().toString().trim()
-            window.location.href = "" + key
         })
     </script>
 </body>

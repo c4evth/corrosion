@@ -62,21 +62,18 @@
 <body>
 	<div class="main">
 		<header>{include file="common/header"}</header>
-		<nav>{include file="conference/nav"}</nav>
+		<nav>{include file="common/nav"}</nav>
+		<nav id="BallNav" class="width-1200 row" style="margin-top:20px;height: 60px;background-color: #D1D1D1;">{include
+			file="conference/nav"}</nav>
 		<!-- content start -->
 		<div class="width-1200 sw row" style="">
-			<!-- 主体内容 -->
-			<div class="col-md-8" style="min-height: 460px;">
-				<p style="border-bottom:2px solid #006db8;height: 30px;line-height: 30px;font-size: 18px;margin-bottom: 10px;">{$Title}</p>
-				{$travel}
-			</div>
-			<!-- 主体内容end -->
+
 			<!-- 侧栏start -->
-			<div class="col-md-4" style="min-height: 460px;padding-left: 0px;padding-right: 0px;text-align: center;border:2px solid;border-color:#e4e1e1;padding-bottom: 30px;">
-				<a href="/index/enlist/index?id={$currID}" class="btn btn-primary" style="font-size:40px;padding: 10px;padding-left:80px;padding-right: 80px; border-radius: 50px;margin-top: 20px">点击报名</a>
+			<div class="col-md-3" style="min-height: 460px;padding-left: 0px;padding-right: 0px;text-align: center;border:2px solid;border-color:#e4e1e1;padding-bottom: 30px;">
+				<a href="/index/enlist/index?id={$currID}" class="btn btn-primary" style="font-size:40px;padding: 10px;padding-left:40px;padding-right: 40px; border-radius: 40px;margin-top: 20px">点击报名</a>
 				<br>
 				<a href=""></a>
-				<a href="" class="btn btn-primary" style="font-size:32px;padding: 10px;padding-left:50px;padding-right: 50px; border-radius: 50px;margin-top: 20px">开票信息表下载</a>
+				<a href="" class="btn btn-primary" style="font-size:32px;padding: 10px;padding-left:20px;padding-right: 20px; border-radius: 40px;margin-top: 20px">开票信息表下载</a>
 				<div class="sideItem">
 					<h4>主办单位</h4>
 					<div style="width: 310px;margin: 0 auto">
@@ -95,6 +92,12 @@
 			</div>
 			<!-- 侧栏end -->
 
+			<!-- 主体内容 -->
+			<div class="col-md-9" style="min-height: 460px;">
+				<p style="border-bottom:2px solid #006db8;height: 30px;line-height: 30px;font-size: 18px;margin-bottom: 10px;">{$Title}</p>
+				{$travel}
+			</div>
+			<!-- 主体内容end -->
 		</div>
 		<!-- content end -->
 	</div>

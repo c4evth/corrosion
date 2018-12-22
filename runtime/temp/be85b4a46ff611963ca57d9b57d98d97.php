@@ -1,0 +1,60 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:87:"/Users/iimt/Development/PHP/corrosion/public/../application/admin/view/login/index.html";i:1541506026;}*/ ?>
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="/vendor/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/static/admin/css/login.css">
+</head>
+
+<body>
+    <div id="Login">
+        <div id="Sub" class="layui-anim layui-anim-up login-main" id="form-main">
+            <h2 id="Title">腐蚀数据后台管理系统</h2>
+            <form class="layui-form" action="?" method="post" style="padding-top: 50px;">
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:20px"></label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="name" lay-verify="title" autocomplete="off" placeholder="请输入用户名或邮箱" style="width:300px" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:20px"></label>
+                    <div class="layui-input-inline">
+                        <input type="password" name="pass" placeholder="请输入密码" autocomplete="off" style="width:300px" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:20px"></label>
+                    <div class="layui-input-inline">
+                        <div class="ly-input" style="position:relative">
+                            <input type="text" name="code" required lay-verify="required" placeholder="请输入验证码" autocomplete="off" class="layui-input"
+                                style="width: 130px">
+                            <img src="<?php echo captcha_src(); ?>" alt="captcha" onclick="this.src='<?php echo captcha_src(); ?>?' + Math.random();" style="position: absolute; left: 140px;top: 0px; height: 38px; width: 160px; cursor: pointer/*让鼠标变成手指形状*/ "
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-left:50px;" class="layui-form-item">
+                    <div class="layui-input-inline" style="">
+                        <input type="submit" class="layui-btn" value="登录" style="width:300px">
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <p id="banquan">版权所有：
+                <em>
+                    <a href="http://www.ipso.live" style="color:white">ipso</a>
+                </em>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

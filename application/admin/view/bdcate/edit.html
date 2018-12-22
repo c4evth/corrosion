@@ -1,0 +1,78 @@
+{include file="public/header"}
+  <!-- 内容主体区域 -->
+
+  <div class="layui-body">
+      <div style="padding: 15px;">
+        <form style="margin-top:50px;" class="layui-form" action="./update" method="post">
+          <div class="layui-form-item">
+            <input type="text" name="id" style="display: none" value="{$cate.id}">
+            <label class="layui-form-label">图标</label>
+            <div class="layui-input-block">
+              <img class="cur-img" src="{$cate.icon}" id="curImg" style="max-width: 200px;">
+              <input type="text" name="icon" id="imgPath" value="{$cate.icon}" style="display: none">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">分类名</label>
+            <div class="layui-input-block">
+              <input type="text" name="name" required lay-verify="required" value="{$cate.name}" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <button class="layui-btn" lay-submit lay-filter="formDemo">修改</button>
+            </div>
+          </div>
+        </form>
+        <input id="img" type="file" style="display: none" accept="image/png, image/jpeg, image/jpg">
+      </div>
+    </div>
+    <script>
+      $(document).ready(init)
+      function init() {
+        //点击头像时调出图片选择
+        $(".cur-img").click(e => {
+          e.stopPropagation()
+          selectFile()
+        })
+        //用户选择图片之后，上传图片，并更新图片
+        $("#img").change(uploadImage)
+      }
+    
+      function selectFile () {
+        $("#img").click()
+      }
+    
+      //上传图片
+      function uploadImage () {
+        // FormData对象，来发送二进制文件。
+        var formdata = new FormData();
+        // 将文件追加到 formdata对象中。
+        formdata.append("image",document.getElementById('img').files[0]);
+        $.ajax({
+            type: "POST",
+            url: "/common/upload/go",
+            data:formdata,
+            /**
+              * 必须false才会避开jQuery对 formdata 的默认处理
+              * XMLHttpRequest会对 formdata 进行正确的处理
+              */
+            processData: false,
+            // 告诉jQuery不要去设置Content-Type请求头
+            contentType: false,
+            dataType: "json",
+            success: function(data){
+              data = JSON.parse(data)
+              if(data.status) {
+                $("#imgPath").val(data.url)
+                $("#curImg").attr("src", data.url)
+              }
+            },
+            error: function(jqXHR){
+               console.log("发生错误：" + jqXHR.status);
+            },
+        });
+      }
+    </script>
+
+{include file="public/footer"}

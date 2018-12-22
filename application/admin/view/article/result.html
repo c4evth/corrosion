@@ -1,0 +1,16 @@
+{include file="public/header"}
+  <!-- 内容主体区域 -->
+<div class="layui-body">
+  <div style="padding: 15px;">
+    <h2>{$result}</h2>
+    <button class="layui-btn" id="back">返回</button>
+    </div>
+  </div>
+  <script>
+    $(document).ready(e => {
+      $("#back").click( a => {
+        window.history.go(-1)
+      })
+    })
+  </script>
+{include file="public/footer"}

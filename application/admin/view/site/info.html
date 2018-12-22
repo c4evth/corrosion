@@ -1,0 +1,39 @@
+{include file="public/header"}
+  <!-- 内容主体区域 -->
+<div class="layui-body">
+  <div style="padding: 15px;">
+    <form style="margin-top:50px;" class="layui-form" action="./updateInfo" method="post">
+      <div class="layui-form-item">
+        <label class="layui-form-label">站点标题</label>
+        <div class="layui-input-block">
+          <input type="text" name="title" required lay-verify="required" maxlength="13" value="{$site.title}" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">站点描述</label>
+        <div class="layui-input-block">
+          <input type="text" name="description" maxlength="38" required lay-verify="required" value="{$site.description}" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">站点副标题</label>
+        <div class="layui-input-block">
+          <input type="text" name="vicetitle" maxlength="28" required lay-verify="required" value="{$site.vicetitle}" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">站点副描述</label>
+        <div class="layui-input-block">
+          <input type="text" name="vicedesc" maxlength="48" required lay-verify="required" value="{$site.vicedesc}" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button class="layui-btn" lay-submit lay-filter="formDemo">修改</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{include file="public/footer"}

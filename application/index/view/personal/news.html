@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+  <!-- <meta name="full-screen" content="yes" /> -->
+  <!-- <meta name="x5-fullscreen" content="true" /> -->
+  <!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>国家材料环境腐蚀科学数据中心 - {$currTitle}</title>
+  <link rel="stylesheet" href="__INDEX__/custom/css/bootstrap.min.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/reset.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/p.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/acm.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/new.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <header>{include file="common/header"}</header>
+    <nav>{include file="common/nav"}</nav>
+    <div class="center_box">
+      <div class="width-1200">
+        <div class="center_left">
+          <h2>个人中心</h2>
+          <span>欢迎进入数据中心！</span>
+          <ul>
+            <li>
+              <a href="{:url('index/personal/index')}">个人信息</a>
+            </li>
+            <li>
+              <a href="{:url('index/personal/collection')}">我的收藏</a>
+            </li>
+            <li>
+              <a href="{:url('index/personal/download')}">我的下载</a>
+            </li>
+            <li class="am_active">
+              <a href="#">消息中心</a>
+            </li>
+          </ul>
+        </div>
+        <div class="center_right">
+          <h1><span>消息中心</span></h1>
+          <div class="message_box">
+            <table border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <th>状态</th>
+                  <th>发件人</th>
+                  <th>标题</th>
+                  <th>发送时间</th>
+                  <th>操作</th>
+                </tr>
+                {if condition="count($messages) != 0"}
+                {volist name="messages" id="vo"}
+                <tr>
+                  <td>
+                    {if condition="$vo.status==0"}
+                    <img src="__INDEX__/custom/images/unread.jpg" alt="">
+                    {else}
+                    <img src="__INDEX__/custom/images/read.jpg" alt="">
+                    {/if}
+                  </td>
+                  <td>数据中心</td>
+                  <td>{$vo.title}</td>
+                  <td>{$vo.ctime}</td>
+                  <td><a data-id="{$vo.id}" href="javascript:void(0);">查看</a></td>
+                </tr>
+                {/volist}
+                {else}
+                <div class="shoucang_none">
+                    暂无消息
+                  </div>
+                {/if}
+                
+              </tbody>
+            </table>
+          </div>
+          <div class="paging">
+            <span>页次：1/100 每页15 总数1486 </span>&nbsp; <a href="index.html">首页</a> <span class="">上一页</span> <a class="blue">下一页</a>
+            <a class="blue">尾页</a> 转到：
+            <div class="col-md-2">
+              <select class="form-control ">
+                <option>第1页</option>
+                <option>第1页</option>
+                <option>第1页</option>
+                <option>第1页</option>
+                <option>第1页</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="new_footer">{include file="common/footer"}</footer>
+  </div>
+  {volist name="messages" id="vo"}
+  <div class="message_popup pop{$vo.id}">
+    <h1>{$vo.title}</h1>
+    <i>X</i>
+    <p>{$vo.content}</p>
+    <a href="javascript:void(0);">阅读完毕</a>
+  </div>
+  {/volist}
+  <script src="__INDEX__/custom/js/jquery.min.js"></script>
+  <script src="__INDEX__/custom/js/p.js"></script>
+  <script src="__INDEX__/custom/js/bootstrap.min.js"></script>
+  <script>
+    $(function () {
+      $('.message_box a').on('click', function () {
+        let id = this.dataset.id
+        setViewed(id)
+        $(".pop" + id).fadeIn();
+      })
+      $('.message_popup a,.message_popup i').on('click', function () {
+        $(this).parent().fadeOut();
+      })
+
+      $('.qiehuan span').on('click', function () {
+        $(this).addClass('active').siblings().removeClass('active')
+      })
+      var mynav = $('nav li').find('a'); //寻找导航的a元素 　　
+      for (var i = 0; i < mynav.length; i++) {
+        var links = mynav[i].getAttribute('href'); //取出每个链接的href属性的值
+        var myurl = document.location.href; //取出当前窗口的链接
+        if (myurl.indexOf(links) != -1) { //判断浏览器地址是否等于当前a元素的href属性
+          $(mynav[i]).parent().addClass('nav-hover')
+        }
+      }
+    })
+
+    function setViewed(id) {
+      let data = {id: id}
+      console.log(data)
+      $.ajax({
+        url: "/index/personal/viewed",
+        data: data,
+        success: res => {
+          console.log(res)
+        }
+      })
+    }
+  </script>
+</body>
+
+</html>

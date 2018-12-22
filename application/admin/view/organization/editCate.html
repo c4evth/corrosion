@@ -1,0 +1,53 @@
+{include file="public/header"}
+<!-- 内容主体区域 -->
+<div class="layui-body">
+	<div style="padding: 15px;">
+		<h3>编辑分类</h3>
+		<form style="margin-top:50px;" class="layui-form" action="/admin/organization/editCate?id={$currID}" method="post">
+			<div class="layui-form-item">
+				<label class="layui-form-label">选择分类标识</label>
+				<div class="layui-input-block">
+					<select name="remark" lay-verify="required">
+						<option value=""></option>
+						{if condition="$cate.remark eq 'media'"}
+						<option selected="selected" value="media">media</option>
+						<option value="1">unit</option>
+						{else}
+						<option value="0">media</option>
+						<option selected="selected" value="unit">unit</option>
+						{/if}
+					</select>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">分类名称</label>
+				<div class="layui-input-block">
+					<input type="text" name="name" placeholder="组织名称" value="{$cate.name}" required lay-verify="required" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button id="submit" class="layui-btn" lay-submit lay-filter="formDemo">修改</button>
+				</div>
+			</div>
+
+		</form>
+	</div>
+</div>
+
+<script src="__LAYUI__/layui.js"></script>
+<script src="__JQUERY__/jquery-3.0.0.js"></script>
+<script type="text/javascript">
+	layui.use('form', function () {
+		var form = layui.form;
+	});
+
+	layui.use(["layer"], function () {
+		var layer = layui.layer;
+	})
+
+</script>
+
+{include file="public/footer"}

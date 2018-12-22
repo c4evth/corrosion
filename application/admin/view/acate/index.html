@@ -1,0 +1,41 @@
+{include file='public/header'}
+
+
+<!-- 内容主体区域 -->
+<div class="layui-body">
+    <div style="padding: 15px;">
+            <a href="/admin/acate/add" class="layui-btn">添加</a>
+        <table class="layui-table">
+            <colgroup>
+                <col width="80">
+                <col width="200">
+                <col width="250">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>分类名</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {volist name="cates" id="vo"}
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>
+                        {$vo.name}
+                    </td>
+                    <td>
+                        <a href="/admin/acate/edit?id={$vo.id}" class="layui-btn layui-btn-warm layui-btn-mini">
+                            <i class="layui-icon">&#xe642;</i>编辑</a>
+                        <a href="/admin/acate/del?id={$vo.id}" class="layui-btn layui-btn-danger layui-btn-mini del">
+                            <i class="layui-icon">&#xe640;</i>删除</a>
+                    </td>
+                </tr>
+                {/volist}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{include file="public/footer">

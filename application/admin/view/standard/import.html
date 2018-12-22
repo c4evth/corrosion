@@ -1,0 +1,40 @@
+{include file="public/header"}
+
+<!-- 内容主体区域 -->
+<div class="layui-body">
+  <div style="padding: 15px;">
+    <form style="margin-top:50px;" class="layui-form" action="/common/Standard/importExcelToStandard" method="POST">
+      <div class="layui-form-item">
+        <label class="layui-form-label">所属标准</label>
+        <div class="layui-input-block">
+          <select name="sid" required lay-verify="required">
+            {volist name="standards" id="vo"}
+            <option value="{$vo.id}">{$vo.name}</option>
+            {/volist}
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">选择excel</label>
+        <div class="layui-input-block">
+          <input type="file" name="file" required lay-verify="required" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button class="layui-btn" lay-submit lay-filter="formDemo">导入</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+    layui.use('form', function(){
+      var form = layui.form;
+      
+      //各种基于事件的操作，下面会有进一步介绍
+    });
+</script>
+
+{include file="public/footer"}

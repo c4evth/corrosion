@@ -1,0 +1,53 @@
+{include file='public/header'}
+
+
+<!-- 内容主体区域 -->
+<div class="layui-body">
+    <div style="padding: 15px;">
+            <a href="/admin/select/add" class="layui-btn">添加</a>
+        <table class="layui-table">
+            <colgroup>
+                <col width="80">
+                <col width="200">
+                <col width="250">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>文章名</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {volist name="articles" id="vo"}
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>
+                        {$vo.title}
+                    </td>
+                    <td>
+                        <a href="/admin/select/del?id={$vo.id}" class="layui-btn layui-btn-danger layui-btn-mini del">
+                            <i class="layui-icon">&#xe640;</i>删除</a>
+                    </td>
+                </tr>
+                {/volist}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+     layui.use('layer', function(){
+        var layer = layui.layer;
+        $(".del").on('click',function(){
+            var url = $(this).attr('href');
+            layer.confirm('确定要删除吗?', {icon: 3, title:'温馨提示'}, function(index){
+                location.href = url;
+                layer.close(index);
+            });
+            return false;
+        });
+    });
+</script>
+
+{include file="public/footer">

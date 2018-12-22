@@ -1,0 +1,78 @@
+{include file='public/header'}
+
+<!-- 内容主体区域 -->
+<div class="layui-body">
+	<div style="padding: 15px;">
+		<h3>组织分类列表</h3><br>
+		<a href="/admin/Conference/add" class="layui-btn">添加会议</a>
+		<a href="/admin/conference/addbanner" class="layui-btn">添加图片</a>
+		<a href="/admin/organization/index" class="layui-btn">查看组织</a>
+		<a href="/admin/organization/addorg" class="layui-btn">添加组织</a>
+		<a href="/admin/organization/addCate" class="layui-btn">添加组织分类</a>
+		<a href="/admin/organization/cate" class="layui-btn">查看组织分类</a>
+		<table class="layui-table">
+			<colgroup>
+				<col width="80">
+				<col>
+				<col width="320">
+				<col width="220">
+			</colgroup>
+			<thead>
+				<tr>
+					<th style="text-align:center">ID</th>
+					<th style="text-align:center">分类名称</th>
+					<th style="text-align:center">分类标识</th>
+					<th style="text-align:center">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				{volist name="cates" id="vo"}
+				<tr>
+					<td style="text-align:center">{$vo.id}</td>
+					<td style="text-align:center">{$vo.name}</td>
+					<td style="text-align:center">
+						{$vo.remark}
+					</td>
+					<td style="text-align:center">
+						<a href="/admin/Organization/editCate?id={$vo.id}" class="layui-btn layui-btn-warm layui-btn-mini">
+							<i class="layui-icon">&#xe642;</i>编辑</a>
+						<a href="/admin/organization/delCate?id={$vo.id}" class="layui-btn layui-btn-danger layui-btn-mini del">
+							<i class="layui-icon">&#xe640;</i>删除</a>
+					</td>
+				</tr>
+				{/volist}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<script>
+	layui.use('layer', function () {
+		var layer = layui.layer;
+		$(".del").on('click', function () {
+			var url = $(this).attr('href');
+			layer.confirm('确定要删除吗?', {
+				icon: 3,
+				title: '温馨提示'
+			}, function (index) {
+				$.ajax({
+					type: "get",
+					url: url,
+					dataType: "json",
+					success: function (data) {
+						if (data.status == 0) {
+							layer.msg(data.msg);
+
+						} else {
+							layer.msg(data.msg);
+							location.reload();
+						}
+					}
+				})
+			});
+			return false;
+		});
+	});
+</script>
+
+{include file="public/footer">

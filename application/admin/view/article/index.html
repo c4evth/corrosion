@@ -1,0 +1,73 @@
+{include file='public/header'}
+
+
+<!-- 内容主体区域 -->
+<div class="layui-body">
+  <div style="padding: 15px;">
+    <a href="/admin/article/add" class="layui-btn">发布文章</a>
+    <table class="layui-table">
+      <colgroup>
+        <col width="80">
+        <col>
+        <col width="80">
+        <col width="120">
+        <col width="130">
+        <col width="80">
+        <col width="100">
+        <col width="220">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>标题</th>
+          <th>作者</th>
+          <th>封面</th>
+          <th>发布时间</th>
+          <th>来源</th>
+          <th>浏览量</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        {volist name="articles" id="vo"}
+        <tr>
+          <td>{$vo.id}</td>
+          <td>{$vo.title}</td>
+          <td>{$vo.authors}</td>
+          <td>
+            <img src="{$vo.cover}" alt="">
+          </td>
+          <td>{$vo.ctime}</td>
+          <td>{$vo.src}</td>
+          <td>{$vo.viewer}</td>
+          <td>
+            <a href="/admin/article/edit?id={$vo.id}" class="layui-btn layui-btn-warm layui-btn-mini">
+              <i class="layui-icon">&#xe642;</i>编辑</a>
+            <a href="/admin/article/del?id={$vo.id}" class="layui-btn layui-btn-danger layui-btn-mini del">
+              <i class="layui-icon">&#xe640;</i>删除</a>
+          </td>
+        </tr>
+        {/volist}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  layui.use('layer', function () {
+    var layer = layui.layer;
+    $(".del").on('click', function () {
+      var url = $(this).attr('href');
+      layer.confirm('确定要删除吗?', {
+        icon: 3,
+        title: '温馨提示'
+      }, function (index) {
+        location.href = url;
+        layer.close(index);
+      });
+      return false;
+    });
+  });
+</script>
+
+{include file="public/footer">

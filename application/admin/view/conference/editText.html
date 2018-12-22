@@ -1,0 +1,135 @@
+{include file="public/header"}
+<!-- 内容主体区域 -->
+<div class="layui-body">
+	<div style="padding: 15px;">
+		<div class="layui-tab">
+			<div class="layui-tab-item layui-show">
+				<h3>编辑会议详细内容</h3>
+				<form style="margin-top:50px;" class="layui-form" action="/admin/Conference/editText" method="post">
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">选择会议</label>
+						<div class="layui-input-inline">
+							<select id="Ballid" name="ballid" lay-verify="required">
+								<option value=""></option>
+								{volist name="ball" id="vo"}
+								<option value="{$vo.id}">{$vo.title}</option>
+								{/volist}
+							</select>
+						</div>
+						<label class="layui-form-label">选择操作</label>
+						<div class="layui-input-inline">
+							<select id="ActId" name="actId" lay-verify="required">
+								<option value=""></option>
+								<option value="hotel">住宿和交通</option>
+								<option value="past">历届回顾</option>
+								<option value="schedule">日程安排</option>
+								<option value="thesis">摘要征集</option>
+								<option value="travel">旅游</option>
+								<option value="about">联系我们</option>
+							</select>
+						</div>
+						<div class="layui-input-inline">
+							<a href="javascript:;" id="AddAct" class="layui-btn layui-btn-primary">选择</a>
+						</div>
+					</div>
+
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<div class="layui-form-item">
+						<label class="layui-form-label">编辑内容</label>
+						<div class="layui-input-block">
+							<div id="editor" class="editor">
+							</div>
+							<textarea id="Content" name="" class="editor-content content" required lay-verify="required">
+
+							</textarea>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<div class="layui-input-block">
+							<button id="submit" disabled class="layui-btn" lay-submit lay-filter="formDemo">确认</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script src="__LAYUI__/layui.js"></script>
+<script src="__JQUERY__/jquery-3.0.0.js"></script>
+<script src="/static/vendor/wangeditor/wangEditor.js"></script>
+<script type="text/javascript">
+	$(".editor-content").hide()
+	var E = window.wangEditor
+	var editor = new E('.editor')
+	var $text1 = $('.content')
+	editor.customConfig.onchange = function (html) {
+		// 监控变化，同步更新到 textarea
+		$text1.val(html)
+	}
+	editor.create()
+	// 初始化 textarea 的值
+	$text1.val(editor.txt.html())
+
+	layui.use('form', function () {
+		var form = layui.form;
+	});
+
+	layui.use(["layer"], function () {
+		var layer = layui.layer;
+		
+		// 选择要编辑的内容
+		$("#AddAct").on("click",function(){
+			var id = $("#Ballid").val()
+			var act = $("#ActId").val()
+			if(id == '' || act == ''){
+				layer.msg("会议或操作不能为空！")
+				return false
+			}
+			$.ajax({
+				url: '/admin/conference/getText?bid=' + id + "&act=" + act,
+				method: "get",
+				success: data => {
+					alert(data.content);
+					$("#editor").children("div:eq(1)").children("div").children("p").append(data.content)
+					$("#Content").attr("name", act)
+					layer.msg("ok")
+					$("#submit").attr("disabled", false)
+				}
+			})
+		})
+	})
+
+	$(document).ready(e => {
+		$("#image-input").change(e => {
+			let file = document.getElementById("image-input")
+			let data = new FormData()
+			data.append('image', file.files[0])
+			$.ajax({
+				url: '/common/upload/go',
+				data: data,
+				processData: false,
+				contentType: false,
+				async: false,
+				method: 'post',
+				success: res => {
+					res = JSON.parse(res)
+					console.log(res)
+					if (res.status) {
+						$("#image-path").val(res.url)
+						$("#Pic").attr('src', res.url)
+						$("#Pic").show();
+					}
+				}
+			})
+		})
+	})
+</script>
+
+{include file="public/footer"}

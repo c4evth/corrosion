@@ -1,0 +1,33 @@
+<div class="width-1200 clearfix">
+    <div class="sc-fl logo-text">
+        <a href="/">
+            <h1 style="color: #0093d6">{$site->title}</h1>
+            <h6>{$site->vicedesc}</h6>
+            <p style="color: #0093d6" class="c-999">{$site->vicetitle}</p>
+            <h6>{$site->description}</h6>
+        </a>
+    </div>
+    <div class="sc-fr searchall pr">
+        <div class="pa">
+            <div class="sc-fr qiehuan">
+                <span class="active">中</span>
+                <span class="">EN</span>
+            </div>
+            {if condition="cookie('corrosion_token')"}
+            <a href="{:url('index/login/logout')}" class="register sc-fr">退出</a>
+            <a href="{:url('index/personal/index')}" class="login sc-fr" style="width: 80px;">个人中心</a>
+            {else}
+            <a href="{:url('index/login/register')}" class="register sc-fr">注册</a>
+            <a href="{:url('index/login/index')}" class="login sc-fr">登录</a>
+            {/if}
+            <div class="sc-fl search">
+                <form action="/index/article/search">
+                    <button type="submit">
+                        <img src="/static/index/custom/images/a.png" alt="">
+                    </button>
+                    <input type="text" name="key" placeholder="请输入您要搜索的内容" id="lang" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

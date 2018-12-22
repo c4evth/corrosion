@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+  <!-- <meta name="full-screen" content="yes" /> -->
+  <!-- <meta name="x5-fullscreen" content="true" /> -->
+  <!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>国家材料环境腐蚀科学数据中心 - {$currTitle}</title>
+  <link rel="stylesheet" href="__INDEX__/custom/css/bootstrap.min.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/reset.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/p.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/acm.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/new.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <header>{include file="common/header"}</header>
+    <nav>{include file="common/nav"}</nav>
+    <div class="center_box">
+      <div class="width-1200">
+        <div class="center_left">
+          <h2>个人中心</h2>
+          <span>欢迎进入数据中心！</span>
+          <ul>
+            <li class="am_active">
+              <a href="#">个人信息</a>
+            </li>
+            <li>
+              <a href="{:url('index/personal/collection')}">我的收藏</a>
+            </li>
+            <li>
+              <a href="{:url('index/personal/download')}">我的下载</a>
+            </li>
+            <li>
+              <a href="{:url('index/personal/news')}">消息中心</a>
+            </li>
+          </ul>
+        </div>
+        <div class="center_right">
+          <h1><span>个人信息</span> <button type="submit" class="xiugai">修改</button></h1>
+          <div class="center_table">
+            <form id="info-form" action="/index/personal/update" method="POST">
+            <ul>
+              <li class="have">
+                <span>用户名：</span>
+                <input type="text" name="id" value="{$user.id}" style="display: none;" readonly="readonly">
+                <input type="text" name="name" value="{$user.name}" readonly="readonly">
+              </li>
+              <li class="have">
+                <span>姓名：</span>
+                <input type="text" name="realname" value="{$user.realname}" readonly="readonly">
+              </li>
+              <li class="have">
+                <span>行 别：</span>
+                <input type="text" name="gender" value="{$user.gender==1? '男':'女'}" readonly="readonly">
+              </li>
+              <li class="have">
+                <span>学历：</span>
+                <input type="text" name="education" value="{$user.education}" readonly="readonly">
+              </li>
+              <li class="have">
+                <span>职务/职称：</span>
+                <input type="text" name="job" value="{$user.job}" readonly="readonly">
+              </li>
+              <li class="have">
+                <span>座机电话：</span>
+                <input type="text" name="telephone" value="{$user.telephone}" readonly="readonly">
+              </li>
+              <li class="have">
+                <span>手机：</span>
+                <input type="text" name="phone" value="{$user.phone}" readonly="readonly">
+              </li>
+              <li class="have">
+                <span>电子邮箱：</span>
+                <input type="text" name="email" value="{$user.email}" readonly="readonly">
+              </li>
+            </ul>
+            <ul>
+              <li class="have">
+                <span>工作单位：</span>
+                <input type="text" name="workunit" value="{$user.workunit}" readonly="readonly">
+              </li>
+              <li class="have">
+                <span>单位性质：</span>
+                <input type="text" name="unittype" value="{$user.unittype}" readonly="readonly">
+              </li>
+              <li class="have">
+                <span>省 份：</span>
+                <input type="text" name="province" value="{$user.province}" readonly="readonly">
+              </li>
+              <li class="have">
+                <span>通信地址：</span>
+                <input type="text" name="address" value="{$user.address}" readonly="readonly">
+              </li>
+              <li>
+                <span>&nbsp;</span>
+                <input type="text" value="&nbsp;" readonly="readonly">
+              </li>
+              <li>
+                <span>&nbsp;</span>
+                <input type="text" value="&nbsp;" readonly="readonly">
+              </li>
+              <li>
+                <span>&nbsp;</span>
+                <input type="text" value="&nbsp;" readonly="readonly">
+              </li>
+              <li>
+                <span>&nbsp;</span>
+                <input type="text" value="&nbsp;" readonly="readonly">
+              </li>
+            </ul>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="new_footer">{include file="common/footer"}</footer>
+  </div>
+  <script src="__INDEX__/custom/js/jquery.min.js"></script>
+  <script src="__INDEX__/custom/js/p.js"></script>
+  <script src="__INDEX__/custom/js/bootstrap.min.js"></script>
+  <script>
+    $(".center_right .xiugai").click(function () {
+      if ($(this).hasClass("am_active")) {
+        return $("#info-form").submit();
+        $(this).removeClass("am_active");
+        $(".xiugai").html("修改");
+        $(".center_table ul li.have input").attr("readonly", "readonly");
+        $(".center_table ul li.have input").css("color", "#333");
+      } else {
+        $(this).addClass("am_active");
+        $(".xiugai").html("完成");
+        $(".center_table ul li.have input").removeAttr("readonly");
+        $(".center_table ul li.have input").css("color", "#999");
+      }
+      return true
+    })
+    $(function () {
+      $('.qiehuan span').on('click', function () {
+        $(this).addClass('active').siblings().removeClass('active')
+      })
+      var mynav = $('nav li').find('a'); //寻找导航的a元素 　　
+      for (var i = 0; i < mynav.length; i++) {
+        var links = mynav[i].getAttribute('href'); //取出每个链接的href属性的值
+        var myurl = document.location.href; //取出当前窗口的链接
+        if (myurl.indexOf(links) != -1) { //判断浏览器地址是否等于当前a元素的href属性
+          $(mynav[i]).parent().addClass('nav-hover')
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

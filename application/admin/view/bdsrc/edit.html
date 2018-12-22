@@ -1,0 +1,95 @@
+{include file="public/header"}
+<!-- 内容主体区域 -->
+<div class="layui-body">
+  <div style="padding: 15px;">
+    <form style="margin-top:50px;" class="layui-form" action="./update" method="post">
+      <div class="layui-form-item">
+        <label class="layui-form-label">数据名</label>
+        <div class="layui-input-block">
+          <select name="bdid" lay-verify="required">
+            {volist name="bdata" id="vo"}
+              {if condition="$vo.id==$data.bdid"}
+              <option value="{$vo.id}" selected>{$vo.name}</option>
+              {else}
+              <option value="{$vo.id}">{$vo.name}</option>
+              {/if}
+            {/volist}
+          </select>
+        </div>
+      </div>
+
+
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">检索值</label>
+        <div class="layui-input-block">
+          <input type="text" name="search" value="{$data.search}" required lay-verify="required" placeholder="检索字段的值" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">数据内容</label>
+        <div class="layui-input-block">
+          <div id="editor">
+              {$data.content}
+          </div>
+          <textarea name="content" id="content" class="editor-content"  required lay-verify="required"></textarea>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <p>可点击表格然后点击编辑菜单栏表格按钮添加或删除行/列哦～</p>
+        </div>
+    </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button class="layui-btn" lay-submit lay-filter="formDemo">修改</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/static/vendor/wangeditor/wangEditor.js"></script>
+<script type="text/javascript">
+  $(".editor-content").hide()
+  var E = window.wangEditor
+  var editor = new E('#editor')
+  var $text1 = $('#content')
+  editor.customConfig.onchange = function (html) {
+    // 监控变化，同步更新到 textarea
+    $text1.val(html)
+  }
+  editor.create()
+  // 初始化 textarea 的值
+  $text1.val(editor.txt.html())
+
+  layui.use('form', function () {
+    var form = layui.form;
+  });
+
+  $(document).ready(e => {
+    $("#image-input").change(e => {
+      $("#curImg").hide()
+      let file = document.getElementById("image-input")
+      let data = new FormData()
+      data.append('image', file.files[0])
+      $.ajax({
+        url: '/common/upload/go',
+        data: data,
+        processData : false,
+        contentType : false,
+        async:false,
+        method: 'post',
+        success: res => {
+          res = JSON.parse(res)
+          console.log(res)
+          if(res.status) {
+            $("#image-path").val(res.url)
+          }
+        }
+      })
+    })
+  })
+</script>
+
+{include file="public/footer"}

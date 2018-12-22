@@ -1,0 +1,110 @@
+{include file="public/header"}
+<!-- 内容主体区域 -->
+<div class="layui-body">
+	<div style="padding: 15px;">
+		<form style="margin-top:50px;" class="layui-form" action="./update" method="post">
+			<div class="layui-form-item">
+				<label class="layui-form-label">数据名</label>
+				<div class="layui-input-block">
+					<select name="bdid" lay-verify="required">
+						{volist name="bdata" id="vo"}
+						<option value="{$vo.id}">{$vo.name}</option>
+						{/volist}
+					</select>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">数据内容</label>
+				<div class="layui-input-block">
+					<div id="editor">
+						{volist name="dataSet" id="rows"}
+						<table width="112" height="152">
+							<colgroup>
+								<col width="56">
+								<col width="56">
+							</colgroup>
+							<tbody>
+								<tr height="19">
+									<td x:str="" height="19" width="56">项目</td>
+									<td x:str="" height="19" width="56">值</td>
+								</tr>
+
+								<tr height="19">
+									{volist name="dataBase" id="base"}
+									<td x:str="" height="19" width="56">{$base.'<br>'}</td>
+									{/volist}
+									{volist name="rows" id='row'}
+									{if condition="$i eq 1"}
+									<td x:num="60195" name="search" height="19" width="56">{$row}<br></td>
+									{/if}
+									<td x:num="60195" height="19" width="56">{$row}<br></td>
+									{/volist}
+								</tr>
+							</tbody>
+						</table>
+						{/volist}
+						<p><br></p>
+					</div>
+					<textarea name="content" id="content" class="editor-content" required lay-verify="required"></textarea>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<p>数据预览，并选择数据所属分类</p>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button class="layui-btn" lay-submit lay-filter="formDemo">确认增加</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<script src="/static/vendor/wangeditor/wangEditor.js"></script>
+<script src="/static/vendor/layui/layui.js"></script>
+<script type="text/javascript">
+	$(".editor-content").hide()
+	var E = window.wangEditor
+	var editor = new E('#editor')
+	var $text1 = $('#content')
+	editor.customConfig.onchange = function (html) {
+		// 监控变化，同步更新到 textarea
+		$text1.val(html)
+	}
+	editor.create()
+	// 初始化 textarea 的值
+	$text1.val(editor.txt.html())
+
+	layui.use('form', function () {
+		var form = layui.form;
+	});
+
+	$(document).ready(e => {
+		$("#image-input").change(e => {
+			let file = document.getElementById("image-input")
+			let data = new FormData()
+			data.append('image', file.files[0])
+			$.ajax({
+				url: '/common/upload/go',
+				data: data,
+				processData: false,
+				contentType: false,
+				async: false,
+				method: 'post',
+				success: res => {
+					res = JSON.parse(res)
+					console.log(res)
+					if (res.status) {
+						$("#image-path").val(res.url)
+					}
+				}
+			})
+		})
+	})
+</script>
+
+{include file="public/footer"}

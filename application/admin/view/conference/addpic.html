@@ -1,0 +1,127 @@
+{include file="public/header"}
+<!-- 内容主体区域 -->
+<div class="layui-body">
+	<div style="padding: 15px;">
+		<div class="layui-tab">
+			<ul class="layui-tab-title">
+				<li><a href="/admin/Conference/addbanner">轮播图</a></li>
+				<li class="layui-this">往届图片</li>
+			</ul>
+
+			<div class="layui-tab-item layui-show">
+				<form style="margin-top:50px;" class="layui-form" action="/admin/Conference/addpic" method="post">
+					<div class="layui-form-item">
+						<label class="layui-form-label">选择会议</label>
+						<div class="layui-input-inline">
+							<select id="BallID" name="ballid" lay-verify="required">
+								<option value=""></option>
+								{volist name="AllBall" id="vo"}
+								<option value="{$vo.id}">{$vo.title}</option>
+								{/volist}
+							</select>
+						</div>
+						<div class="layui-input-inline">
+							<a href="javascript:;" id="AddHistory" class="layui-btn layui-btn-primary">选择</a>
+						</div>
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<div class="layui-form-item">
+						<label class="layui-form-label">往届图片</label>
+						<div class="layui-input-block">
+							<input type="file" id="image-input" autocomplete="off" class="layui-input">
+							<input type="text" id="image-path" style="display: none" name="historypic">
+							<img id="Pic" width="50px" height="50px" hidden src="#" alt="">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">往届回顾</label>
+						<div class="layui-input-block">
+							<div id="editor" class="editor">
+							</div>
+							<textarea name="history" class="editor-content content" required lay-verify="required"></textarea>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<div class="layui-input-block">
+							<button id="submit" disabled class="layui-btn" lay-submit lay-filter="formDemo">增加</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="layui-tab-item">
+				ipso
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script src="__LAYUI__/layui.js"></script>
+<script src="__JQUERY__/jquery-3.0.0.js"></script>
+<script src="/static/vendor/wangeditor/wangEditor.js"></script>
+<script type="text/javascript">
+	$(".editor-content").hide()
+	var E = window.wangEditor
+	var editor = new E('.editor')
+	var $text1 = $('.content')
+	editor.customConfig.onchange = function (html) {
+		// 监控变化，同步更新到 textarea
+		$text1.val(html)
+	}
+	editor.create()
+	// 初始化 textarea 的值
+	$text1.val(editor.txt.html())
+
+	layui.use('form', function () {
+		var form = layui.form;
+	});
+
+	layui.use(["layer"], function () {
+		var layer = layui.layer;
+		$("#AddHistory").on('click',function(){
+			var id = $("#BallID").val()
+			var url = "/admin/Conference/getHistory?id=" + id;
+			$.ajax({
+				type: "get",
+				url: url,
+				success: res => {
+					$("#editor").children("div:eq(1)").children("div").children("p").append(res.content)
+					layer.msg("ok")
+					$("#submit").attr("disabled", false)
+				}
+			})
+		})
+	})
+
+	$(document).ready(e => {
+		$("#image-input").change(e => {
+			let file = document.getElementById("image-input")
+			let data = new FormData()
+			data.append('image', file.files[0])
+			$.ajax({
+				url: '/common/upload/go',
+				data: data,
+				processData: false,
+				contentType: false,
+				async: false,
+				method: 'post',
+				success: res => {
+					res = JSON.parse(res)
+					console.log(res)
+					if (res.status) {
+						$("#image-path").val(res.url)
+						$("#Pic").attr('src',res.url)
+						$("#Pic").show();
+					}
+				}
+			})
+		})
+	})
+</script>
+
+{include file="public/footer"}

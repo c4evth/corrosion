@@ -1,0 +1,167 @@
+{include file="public/header"}
+<!-- 内容主体区域 -->
+<div class="layui-body">
+	<div style="padding: 15px;">
+		<h3>添加会议</h3>
+		<form style="margin-top:50px;" class="layui-form" action="?" method="post">
+			<div class="layui-form-item">
+				<label class="layui-form-label">文章编号</label>
+				<div class="layui-input-block">
+					<input id="NewsID" type="text" name="newsid" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">选择文章</label>
+				<div class="layui-input-inline">
+					<select id="Ball" lay-verify="required">
+						<option value=""></option>
+						{volist name="article" id="vo"}
+						<option value="{$vo.id}">{$vo.title}</option>
+						{/volist}
+					</select>
+				</div>
+				<div class="layui-input-inline">
+					<a href="javascript:;" id="AddBall" class="layui-btn layui-btn-primary">添加文章</a>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">会议标题</label>
+				<div class="layui-input-block">
+					<input type="text" name="title" required lay-verify="required" autocomplete="off" class="layui-input">
+					<input type="hidden" name="__token__" value="{$Request.token}" />
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">主办单位</label>
+				<div class="layui-input-block">
+					<input type="text" name="host" required lay-verify="required" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">时间节点</label>
+				<div class="layui-input-block">
+					<input type="text" name="waittime" placeholder="两节点之间英文逗号隔开" required lay-verify="required" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">会议主题</label>
+				<div class="layui-input-block">
+					<input type="text" name="theme" placeholder="两主题之间英文逗号隔开" required lay-verify="required" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">主办方logo</label>
+				<div class="layui-input-block">
+					<input type="file" id="image-input" autocomplete="off" class="layui-input">
+					<input type="text" id="image-path" style="display: none" name="hostlogo">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">会议亮点</label>
+				<div class="layui-input-block">
+					<div class="editor">
+					</div>
+					<textarea name="spot" class="editor-content content" required lay-verify="required"></textarea>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button id="submit" class="layui-btn" lay-submit lay-filter="formDemo">增加</button>
+				</div>
+			</div>
+
+		</form>
+	</div>
+</div>
+
+<script src="__LAYUI__/layui.js"></script>
+<script src="__JQUERY__/jquery-3.0.0.js"></script>
+<script src="/static/vendor/wangeditor/wangEditor.js"></script>
+<script type="text/javascript">
+	$(".editor-content").hide()
+	var E = window.wangEditor
+	var editor = new E('.editor')
+	var $text1 = $('.content')
+	editor.customConfig.onchange = function (html) {
+		// 监控变化，同步更新到 textarea
+		$text1.val(html)
+	}
+	editor.create()
+	// 初始化 textarea 的值
+	$text1.val(editor.txt.html())
+
+	layui.use('form', function () {
+		var form = layui.form;
+	});
+
+	layui.use("layer", function(){
+		var layer = layui.layer;
+
+		$("#NewsID").blur(function(){
+			let data = $(this).val();
+			let url = "/admin/conference/isExistNews";
+			// alert(url);
+			// alert(data);
+			$.ajax({
+				type: "post",
+				data: {"data": data},
+				url: url,
+				success:function(data){
+					if(data.status == 0){
+						layer.alert(data.msg, { icon: 5 });
+						$("#submit").attr("disabled",true);
+					}else{
+						layer.msg(data.msg);
+						$("#submit").attr("disabled", false);
+					}
+				}
+			})
+		})
+
+		// 选择文章点击事件
+		$("#AddBall").on("click", function(){
+			var newID = $("#Ball").val()
+			var oldStrId = $("#NewsID").val()
+			var newStrId = ''
+			if(oldStrId == ''){
+				newStrId = newID
+			}else{
+				newStrId = oldStrId + ',' + newID
+			}
+			$("#NewsID").val(newStrId)
+		})
+	})
+
+	$(document).ready(e => {
+		$("#image-input").change(e => {
+			let file = document.getElementById("image-input")
+			let data = new FormData()
+			data.append('image', file.files[0])
+			$.ajax({
+				url: '/common/upload/go',
+				data: data,
+				processData: false,
+				contentType: false,
+				async: false,
+				method: 'post',
+				success: res => {
+					res = JSON.parse(res)
+					console.log(res)
+					if (res.status) {
+						$("#image-path").val(res.url)
+					}
+				}
+			})
+		})
+	})
+</script>
+
+{include file="public/footer"}

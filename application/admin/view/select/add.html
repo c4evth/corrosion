@@ -1,0 +1,32 @@
+{include file="public/header"}
+  <!-- 内容主体区域 -->
+
+  <div class="layui-body">
+      <div style="padding: 15px;">
+        <form style="margin-top:50px;" class="layui-form" action="./add">
+          <div class="layui-form-item">
+            <label class="layui-form-label">选择文章</label>
+            <div class="layui-input-block">
+              <select name="aid" lay-verify="required">
+                {volist name="articles" id="vo"}
+                <option value={$vo.id}>{$vo.title}</option>
+                {/volist}
+              </select>
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <button class="layui-btn" lay-submit lay-filter="formDemo">添加</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>  
+       layui.use('form', function(){
+      var form = layui.form;
+    });
+    </script>
+
+{include file="public/footer"}

@@ -1,0 +1,102 @@
+{include file="public/header"}
+<!-- 内容主体区域 -->
+<div class="layui-body">
+	<div style="padding: 15px;">
+		<h3>添加报名</h3>
+		<form style="margin-top:50px;max-width: 600px;" class="layui-form" action="/admin/enlist/edit?id={$enlist.id}" method="post">
+			<div class="layui-form-item">
+				<label class="layui-form-label">选择会议</label>
+				<div class="layui-input-block">
+					<select name="bid" lay-verify="required">
+						<option value=""></option>
+						{volist name="AllBall" id="vo"}
+						{if condition="$enlist.bid eq $vo.id"}
+						<option selected="selected" value="{$vo.id}">{$vo.title}</option>
+						{else}
+						<option value="{$vo.id}">{$vo.title}</option>
+						{/if}
+						{/volist}
+					</select>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">姓名</label>
+				<div class="layui-input-block">
+					<input id="NewsID" type="text" value="{$enlist.name}" name="name" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">电话</label>
+				<div class="layui-input-block">
+					<input type="text" name="phone" value="{$enlist.phone}" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">邮箱</label>
+				<div class="layui-input-block">
+					<input type="text" name="email" value="{$enlist.email}" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">单位</label>
+				<div class="layui-input-block">
+					<input type="text" name="org" value="{$enlist.org}" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">报名状态</label>
+				<div class="layui-input-inline">
+					<input type="text" name="status"value="{$enlist.status}" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">是否有论文</label>
+				<div class="layui-input-block">
+					<p style="padding-top:8px;">{if condition="$enlist.hasPaper eq 0"}否{else}是{/if}</p>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">是否做报告</label>
+				<div class="layui-input-block">
+					<p style="padding-top:8px;">{if condition="$enlist.isReport eq 0"}否{else}是{/if}</p>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button id="submit" class="layui-btn" lay-submit lay-filter="formDemo">修改</button>
+				</div>
+			</div>
+			{if condition="$msg neq ''"}
+			<p id="ErrorMsg" hidden>{$msg}</p>
+			{else}
+			<p id="Msg" hidden>{$msg}</p>
+			{/if}
+		</form>
+	</div>
+</div>
+
+<script src="__LAYUI__/layui.js"></script>
+<script src="__JQUERY__/jquery-3.0.0.js"></script>
+<script src="/static/vendor/wangeditor/wangEditor.js"></script>
+<script type="text/javascript">
+	layui.use(['form', 'layer'], function () {
+		var form = layui.form;
+		var layer = layui.layer;
+
+		// 弹出错误信息	
+		var msg = $("#ErrorMsg").text();
+		if (msg != '') {
+			layer.open({
+				icon: 2
+				, title: '错误提示'
+				, content: msg
+			});
+		}
+	});
+</script>
+
+{include file="public/footer"}

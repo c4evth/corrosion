@@ -1,0 +1,28 @@
+{include file="public/header"}
+  <!-- 内容主体区域 -->
+
+  <div class="layui-body">
+      <div style="padding: 15px;">
+        <form style="margin-top:50px;" class="layui-form" action="./updateFriends" method="post">
+          <div class="layui-form-item">
+            <label class="layui-form-label">名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" required lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">链接地址</label>
+            <div class="layui-input-block">
+              <input type="text" name="linkto" required lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <button class="layui-btn" lay-submit lay-filter="formDemo">增加</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+{include file="public/footer"}

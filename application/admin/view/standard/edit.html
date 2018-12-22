@@ -1,0 +1,44 @@
+{include file="public/header"}
+<!-- 内容主体区域 -->
+<div class="layui-body">
+  <div style="padding: 15px;">
+    <form style="margin-top:50px;" class="layui-form" action="./update" method="post">
+      <div class="layui-form-item">
+        <label class="layui-form-label">标准名</label>
+        <div class="layui-input-block">
+          <input type="text" name="id" style="display: none" required lay-verify="required" value="{$standard.id}"
+            autocomplete="off" class="layui-input">
+          <input type="text" name="name" required lay-verify="required" value="{$standard.name}" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">所属分类</label>
+        <div class="layui-input-block">
+
+          <select name="cid" lay-verify="required">
+            {volist name="cates" id="vo"}
+            {if condition="$vo.id == $standard.cid"}
+            <option value={$vo.id} selected>{$vo.name}</option>
+            {else}
+            <option value={$vo.id}>{$vo.name}</option>
+            {/if}
+            {/volist}
+          </select>
+        </div>
+      </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn" lay-submit lay-filter="formDemo">修改</button>
+    </div>
+  </div>
+  </form>
+</div>
+</div>
+<script>
+  layui.use('form', function () {
+    var form = layui.form;
+  });
+</script>
+{include file="public/footer"}

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <!-- <meta name="full-screen" content="yes" /> -->
+    <!-- <meta name="x5-fullscreen" content="true" /> -->
+    <!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>国家材料环境腐蚀科学数据中心-{$currTitle}</title>
+    <link rel="stylesheet" href="__INDEX__/custom/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__INDEX__/custom/css/reset.css">
+    <link rel="stylesheet" href="__INDEX__/custom/css/p.css">
+    <link rel="stylesheet" href="__INDEX__/custom/css/acm.css">
+    <style>
+        footer {
+            margin-top: 3%;
+        }
+
+        .dataBox {
+            width: 71%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <header>{include file="common/header"}</header>
+        <nav>{include file="common/nav"}</nav>
+        <div class="width-1200">
+            <div class="sw pr clearfix">
+                <div class="platform-aside sc-fl">
+                    {volist name="parentDcate" id="parents"}
+                    <a href="javascript:;" class="parentA">{$parents->name}</a>
+                    <ul class="ul-down" style="display:block2;">
+                        {volist name="childDcate" id="child"}
+                        {if condition="$parents->id eq $child->parent"}
+                        <li class="toggle-li c-333"><img src="__INDEX__/custom/images/a38.png" alt=""><span>{$child->name}</span>
+                            <ol class="ol-down">
+                                {volist name="dataShow" id="vo"}
+                                {if condition="$vo->cid eq $child->id"}
+                                <li>
+                                    <a target="_content" href="{:url('/index/indoor/dataShow')}?id={$vo->id}&type={$child->name}"><img
+                                            src="__INDEX__/custom/images/a39.png" alt=""><span>{$vo->name}</span></a>
+                                </li>
+                                {/if}
+                                {/volist}
+                            </ol>
+                        </li>
+                        {/if}
+                        {/volist}
+                    </ul>
+                    {/volist}
+                </div>
+
+                <div class="sc-fr dataBox">
+                    <iframe id="_content" name="_content" src="{:url('index/indoor/dataShow')}?id=1&type='test'"
+                        scrolling="no" frameborder="no" width="100%" onload="setIframeHeight(this)">
+                        <div class="clearfix">
+                            <div class="select sc-fl">
+                                <select name="" id="">
+                                    {volist name="parentDcate" id="vo"}
+                                    <option value="0">{$vo->name}</option>
+                                    {/volist}
+                                </select>
+                            </div>
+                            <div class="search2 sc-fl">
+                                <input type="text">
+                                <button>搜索</button>
+                            </div>
+                        </div>
+                        <div class="title m25">
+                            <b></b><span>开路电位</span>
+                        </div>
+                        <ul class="equipmentdata-ul" style="margin-top:20px;">
+                            <li>
+                                <h5><a href="#">Q235 4045</a></h5>
+                                <div class="clearfix">
+                                    <a href="#" class="sc-fl left">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td>材料名称：Q235</td>
+                                                    <td>材料类别：碳钢</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>实验周期（月）：无</td>
+                                                    <td>试验地点：无</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </a>
+                                    <div class="sc-fl right clearfix">
+                                        <div class="sc-fl browse">浏览量：22</div>
+                                        <div class="sc-fr operation">
+                                            <p class="sc-fl"><img src="__INDEX__/custom/images/a40.png" alt=""><span>收藏</span></p>
+                                            <p class="sc-fl"><img src="__INDEX__/custom/images/a41.png" alt=""><span>引用</span></p>
+                                            <p class="sc-fl"><img src="__INDEX__/custom/images/a42.png" alt=""><span>相关文章</span></p>
+                                            <p class="sc-fl"><img src="__INDEX__/custom/images/a44.png" alt=""><span>下载</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+        <footer>{include file="common/footer"}</footer>
+    </div>
+    <script src="__INDEX__/custom/js/jquery.min.js"></script>
+    <script src="__INDEX__/custom/js/p.js"></script>
+    <script src="__INDEX__/custom/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+
+            var mynav = $('nav li').find('a'); //寻找导航的a元素 　　
+            for (var i = 0; i < mynav.length; i++) {
+                var links = mynav[i].getAttribute('href'); //取出每个链接的href属性的值
+                var myurl = document.location.href; //取出当前窗口的链接
+                if (myurl.indexOf(links) != -1) { //判断浏览器地址是否等于当前a元素的href属性
+                    $(mynav[i]).parent().addClass('nav-hover')
+                }
+            }
+            $('.ol-down').on('click', function (e) {
+                e.stopPropagation();
+
+            })
+            $('.ol-down li').on('click', function () {
+                $(this).addClass('cur').siblings().removeClass('cur')
+
+            })
+            $('.platform-aside .parentA').on('click', function () {
+                $(this).next().slideToggle()
+
+            })
+            $('.ul-down .toggle-li').on('click', function () {
+                $(this).find('img').toggleClass('xia')
+                $(this).find('.ol-down').slideToggle()
+
+            })
+
+            window.onload = function () {
+                setIframeHeight(document.getElementById('_content'));
+            };
+        })
+
+        function setIframeHeight(iframe) {
+            if (iframe) {
+                var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+                if (iframeWin.document.body) {
+                    iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+                }
+            }
+        };
+    </script>
+</body>
+
+</html>

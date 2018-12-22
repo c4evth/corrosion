@@ -1,0 +1,169 @@
+{include file="public/header"}
+<!-- 内容主体区域 -->
+<div class="layui-body">
+	<div style="padding: 15px;">
+		<form style="margin-top:50px;" class="layui-form" action="/admin/conference/edit?id={$ballID}" method="post">
+			<div class="layui-form-item">
+				<label class="layui-form-label">文章编号</label>
+				<div class="layui-input-block">
+					<input id="NewsID" type="text" value="{$oldBall.newsid}" name="newsid" placeholder="两编号之间英文逗号隔开" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">选择文章</label>
+				<div class="layui-input-inline">
+					<select id="Ball" lay-verify="required">
+						<option value=""></option>
+						{volist name="article" id="vo"}
+						<option value="{$vo.id}">{$vo.title}</option>
+						{/volist}
+					</select>
+				</div>
+				<div class="layui-input-inline">
+					<a href="javascript:;" id="AddBall" class="layui-btn layui-btn-primary">添加文章</a>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">会议标题</label>
+				<div class="layui-input-block">
+					<input type="text" name="title" value="{$oldBall.title}" required lay-verify="required" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">主办单位</label>
+				<div class="layui-input-block">
+					<input type="text" name="host" value="{$oldBall.host}" required lay-verify="required" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">时间节点</label>
+				<div class="layui-input-block">
+					<input type="text" name="waittime" value="{$oldBall.waittime}" placeholder="两节点之间英文逗号隔开" required lay-verify="required" autocomplete="off"
+					 class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">会议主题</label>
+				<div class="layui-input-block">
+					<input type="text" name="theme" value="{$oldBall.theme}" placeholder="两主题之间英文逗号隔开" required lay-verify="required" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">主办方logo</label>
+				<div class="layui-input-block">
+					<input type="file" id="image-input" autocomplete="off" class="layui-input">
+					<input type="text" id="image-path" value="{$oldBall.hostlogo}" style="display: none" name="hostlogo">
+					<img width="50px" id="oldPic" height="50px" src="{$oldBall.hostlogo}" alt="">
+					<img width="50px" hidden id="newPic" height="50px" src="#" alt="">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">会议亮点</label>
+				<div class="layui-input-block">
+					<div class="editor">
+						{$oldBall.spot}
+					</div>
+					<textarea name="spot" class="editor-content content" required lay-verify="required"></textarea>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button id="submit" class="layui-btn" lay-submit lay-filter="formDemo">修改</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<script src="__LAYUI__/layui.js"></script>
+<script src="__JQUERY__/jquery-3.0.0.js"></script>
+<script src="/static/vendor/wangeditor/wangEditor.js"></script>
+<script type="text/javascript">
+	$(".editor-content").hide()
+	var E = window.wangEditor
+	var editor = new E('.editor')
+	var $text1 = $('.content')
+	editor.customConfig.onchange = function (html) {
+		// 监控变化，同步更新到 textarea
+		$text1.val(html)
+	}
+	editor.create()
+	// 初始化 textarea 的值
+	$text1.val(editor.txt.html())
+
+	layui.use('form', function () {
+		var form = layui.form;
+	});
+
+	layui.use("layer", function () {
+		var layer = layui.layer;
+
+		// 通过填写文本框加入文章，需要对填写的文章id进行数据库验证
+		$("#NewsID").blur(function () {
+			let data = $(this).val();
+			let url = "/admin/conference/isExistNews";
+			// alert(url);
+			// alert(data);
+			$.ajax({
+				type: "post",
+				data: { "data": data },
+				url: url,
+				success: function (data) {
+					if (data.status == 0) {
+						layer.alert(data.msg, { icon: 5 });
+						$("#submit").attr("disabled", true);
+					} else {
+						layer.msg(data.msg);
+						$("#submit").attr("disabled", false);
+					}
+				}
+			})
+		})
+
+		// 选择文章点击事件，文章来自数据库，无需再对文章进行数据库校验
+		$("#AddBall").on("click", function () {
+			var newID = $("#Ball").val()
+			var oldStrId = $("#NewsID").val()
+			var newStrId = ''
+			if (oldStrId == '') {
+				newStrId = newID
+			} else {
+				newStrId = oldStrId + ',' + newID
+			}
+			$("#NewsID").val(newStrId)
+		})
+
+	})
+
+	$(document).ready(e => {
+		$("#image-input").change(e => {
+			let file = document.getElementById("image-input")
+			let data = new FormData()
+			data.append('image', file.files[0])
+			$.ajax({
+				url: '/common/upload/go',
+				data: data,
+				processData: false,
+				contentType: false,
+				async: false,
+				method: 'post',
+				success: res => {
+					res = JSON.parse(res)
+					console.log(res)
+					if (res.status) {
+						$("#image-path").val(res.url);
+						$("#oldPic").hide();
+						$("#newPic").attr('src', res.url);
+						$("#newPic").show();
+					}
+				}
+			})
+		})
+	})
+</script>
+
+{include file="public/footer"}

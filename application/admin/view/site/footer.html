@@ -1,0 +1,48 @@
+{include file="public/header"}
+<!-- 内容主体区域 -->
+<div class="layui-body">
+  <div style="padding: 15px;">
+    <form style="margin-top:50px;" class="layui-form" action="" method="post">
+      <div class="layui-form-item">
+        <label class="layui-form-label">中心简介</label>
+        <div class="layui-input-block">
+          <div id="editor">
+              {$content}
+          </div>
+          <textarea name="content" id="content" class="editor-content"  required lay-verify="required"></textarea>
+        </div>
+      </div>
+
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <p>点击文字后，标题栏上方蓝色可点击更改列表或链接地址哦</p>
+          <button class="layui-btn" lay-submit lay-filter="formDemo">修改</button>
+          <span>{$hint}</span>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/static/vendor/wangeditor/wangEditor.js"></script>
+<script type="text/javascript">
+  $(".editor-content").hide()
+  var E = window.wangEditor
+  var editor = new E('#editor')
+  var $text1 = $('#content')
+  editor.customConfig.onchange = function (html) {
+    // 监控变化，同步更新到 textarea
+    $text1.val(html)
+  }
+  editor.create()
+  // 初始化 textarea 的值
+  $text1.val(editor.txt.html())
+
+  layui.use('form', function () {
+    var form = layui.form;
+  });
+
+ 
+</script>
+
+{include file="public/footer"}

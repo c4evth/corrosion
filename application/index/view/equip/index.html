@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+  <!-- <meta name="full-screen" content="yes" /> -->
+  <!-- <meta name="x5-fullscreen" content="true" /> -->
+  <!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>国家材料环境腐蚀科学数据中心</title>
+  <link rel="stylesheet" href="__INDEX__/custom/css/bootstrap.min.css">
+  <link rel="stylesheet" href="__VENDOR__/layui/css/layui.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/reset.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/p.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/acm.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/new.css">
+  <style>
+    .layui-table-tool-temp {
+      display: none;
+    }
+    footer {
+        margin-top: 3%;
+      }
+
+      .data-center {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 2%;
+      }
+      .data-header {
+        padding-top: 30px;
+      }
+      .data-header .right-top input {
+        background: none;
+        text-indent: 0;
+      }
+      .xm-select-parent {
+        display: inline-block;
+        width: 220px;
+      }
+      .xm-select-parent .xm-select {
+        width: 100%;
+      }
+
+      .xm-select-parent .xm-select .xm-select-label {
+        overflow: hidden;
+        height: 30px;
+      }
+	</style>
+</head>
+
+<body>
+  <div class="main">
+    <header>{include file="common/header"}</header>
+    <nav>{include file="common/nav"}</nav>
+
+
+    <div class="width-1200">
+      <div class="data-header">
+        <div class="right-top">
+          <span style="padding-left:3%">设备</span>
+          <select name="dian" xm-select="selectId" xm-select-skin="default" id="equip">
+          </select>
+          <span style="padding-left:3%">开始时间</span>
+          <input type="text" id="startTime" class="layui-input" style="background: none; text-indent: 0; display: inline-block;"
+            placeholder="请输入开始时间" />
+          <span>结束时间</span>
+          <input type="text" id="endTime" class="layui-input" style="background: none; text-indent: 0; display: inline-block;"
+            placeholder="请输入结束时间" />
+          <button type="button" id="search">搜索</button>
+        </div>
+      </div>
+
+      <table class="layui-hide" id="test"></table>
+    </div>
+    <footer>{include file="common/footer"}</footer>
+  </div>
+  <script src="__INDEX__/custom/js/jquery.min.js"></script>
+  <script src="__INDEX__/custom/js/p.js"></script>
+  <script src="__INDEX__/custom/js/bootstrap.min.js"></script>
+  <script src="__VENDOR__/layui/layui.js"></script>
+  <script>
+    let ROOT_PATH = "http://www.corrinfo.com";
+    let EQUIP = {}
+    $(function () {
+      $('.qiehuan span').on('click', function () {
+        $(this).addClass('active').siblings().removeClass('active')
+      })
+      var mynav = $('nav li').find('a'); //寻找导航的a元素 　　
+      for (var i = 0; i < mynav.length; i++) {
+        var links = mynav[i].getAttribute('href'); //取出每个链接的href属性的值
+        var myurl = document.location.href; //取出当前窗口的链接
+        if (myurl.indexOf(links) != -1) { //判断浏览器地址是否等于当前a元素的href属性
+          $(mynav[i]).parent().addClass('nav-hover')
+        }
+      }
+    })
+
+    $(document).ready(e => {
+      EQUIP = JSON.parse(localStorage.getItem('corro_equip_row'))
+      layui.use("laydate", function () {
+        var laydate = layui.laydate;
+
+        //执行一个laydate实例
+        laydate.render({
+          elem: "#startTime", //指定元素
+          format: "yyyy-MM-dd HH:mm",
+          type: "datetime"
+        });
+        laydate.render({
+          elem: "#endTime", //指定元素
+          format: "yyyy-MM-dd HH:mm",
+          type: "datetime"
+        });
+      });
+      $("#search").click(e => {
+        let id = $("#equip").val()
+        let start = $("#startTime").val()
+        let end = $("#endTime").val()
+
+        renderTable(id, start, end)
+      })
+      get_equipment()
+    })
+
+
+
+    // 获取设备列表
+    function get_equipment() {
+      $.ajax({
+        url: ROOT_PATH + "/Api/Menu/get_equip",
+        dataType: "json",
+        success: res => {
+          let selectDom = $("#equip");
+          let optionHtml = "";
+          for (var i = 0; i < res.length; i++) {
+            optionHtml =
+              "<option value='" +
+              res[i].id +
+              "'>" +
+              res[i].name +
+              "</option>";
+            selectDom.append(optionHtml);
+          }
+          initTable()
+        }
+      });
+    }
+
+    function initTable() {
+      let id = EQUIP.id
+      $("#equip").val(id)
+      renderTable(id)
+    }
+
+    function renderTable(id, start = '', end = '') {
+      layui.use("table", function () {
+        var table = layui.table;
+        let URL = 'http://www.corrinfo.com/Api/Menu/get_equip_data?id=' + id
+          + '&start=' + start
+          + '&end=' + end
+        table.render({
+          elem: '#test',
+          toolbar: 'default',
+          url: URL,
+          cols: [
+            [{
+                field: 'id',
+                width: 80,
+                title: 'ID',
+                sort: true
+              },
+              {
+                field: 't',
+                width: 120,
+                title: '温度'
+              },
+              {
+                field: 'h',
+                width: 120,
+                title: '湿度',
+                sort: true
+              },
+              {
+                field: 'i1',
+                width: 120,
+                title: '通道1电流'
+              },
+              {
+                field: 'i2',
+                width: 150,
+                title: '通道2电流'
+              },
+              {
+                field: 'i3',
+                width: 150,
+                title: '通道3电流'
+              },
+              {
+                field: 'i4',
+                width: 150,
+                title: '通道4电流'
+              },
+              {
+                field: 'v1',
+                width: 150,
+                title: '通道一电压'
+              },
+              {
+                field: 'time',
+                width: 150,
+                title: '采集时间'
+              },
+            ]
+          ],
+          page: true
+        });
+      })
+    }
+  </script>
+</body>
+
+</html>

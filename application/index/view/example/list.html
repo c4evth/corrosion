@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+	<!-- <meta name="full-screen" content="yes" /> -->
+	<!-- <meta name="x5-fullscreen" content="true" /> -->
+	<!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>国家材料环境腐蚀科学数据中心</title>
+	<link rel="stylesheet" href="__INDEX__/custom/css/bootstrap.min.css">
+	<link rel="stylesheet" href="__VENDOR__/layui/css/layui.css">
+	<link rel="stylesheet" href="__INDEX__/custom/css/reset.css">
+	<link rel="stylesheet" href="__INDEX__/custom/css/p.css">
+	<link rel="stylesheet" href="__INDEX__/custom/css/acm.css">
+	<link rel="stylesheet" href="__INDEX__/custom/css/new.css">
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<div class="main">
+		<header>{include file="common/header"}</header>
+		<nav>{include file="common/nav"}</nav>
+
+
+		<div class="width-1200">
+			<div class="menu">
+				<a href="/">首页</a>
+				<span>&gt;</span>
+				{$pageName}
+			</div>
+			<div class="list_box">
+				<ul style="padding: 0 30px;">
+					{volist name="data" id="vo"}
+					<li>
+						<a href="/index/article/index?id={$vo.id}">
+							<img src="{$vo.cover}">
+							<h1>{$vo.title}</h1>
+							<span>{$vo.ctime}  作者：{$vo.authors}<br />
+								来源：{$vo.src}</span>
+							<p>
+								{$vo.content}
+							</p>
+						</a>
+					</li>
+					{/volist}
+				</ul>
+			</div>
+			<div class="paging" style="display:block;font-size: 1.5em;">
+				<a class="layui-btn layui-btn-primary" href="/index/example/list?cid={$currCid}&page=1">首页</a>
+				{if condition="$hasPagePre"}
+				<a href="/index/example/list?cid={$currCid}&page={$currPage - 1}" class="layui-icon layui-btn layui-btn-primary">&#xe65a;</a>
+				{else}
+				<a href="javascript:;" class="layui-icon layui-btn layui-btn-primary">&#xe65a;</a>
+				{/if}
+
+				{volist name="pageConunt" id="vo"}
+				{if condition="$vo eq $currPage"}
+				<a class="Item layui-btn layui-btn-normal" style="margin-left:-5px;" href="#"><span>{$vo}</span></a>
+				{else}
+				<a class="Item layui-btn layui-btn-primary" style="margin-left:-5px;" href="/index/example/list?cid={$currCid}&page={$vo}"><span>{$vo}</span></a>
+				{/if}
+				{/volist}
+
+				{if condition="$hasPageNext"}
+				<a href="/index/example/list?cid={$currCid}&page={$currPage + 1}" style="margin-left:-5px;" class="layui-icon layui-btn layui-btn-primary">&#xe65b;</a>
+				{else}
+				<a href="javascript:;" style="margin-left:-5px;" class="layui-icon layui-btn layui-btn-primary">&#xe65b;</a>
+				{/if}
+				<a class="layui-btn layui-btn-primary" href="/index/example/list?cid={$currCid}&page={$count}">尾页</a>
+			</div>
+		</div>
+		<footer>{include file="common/footer"}</footer>
+	</div>
+	<script src="__INDEX__/custom/js/jquery.min.js"></script>
+	<script src="__INDEX__/custom/js/p.js"></script>
+	<script src="__INDEX__/custom/js/bootstrap.min.js"></script>
+	<script src="__VENDOR__/layui/layui.js"></script>
+	<script>
+		$(function () {
+			$('.qiehuan span').on('click', function () {
+				$(this).addClass('active').siblings().removeClass('active')
+			})
+			var mynav = $('nav li').find('a'); //寻找导航的a元素 　　
+			for (var i = 0; i < mynav.length; i++) {
+				var links = mynav[i].getAttribute('href'); //取出每个链接的href属性的值
+				var myurl = document.location.href; //取出当前窗口的链接
+				if (myurl.indexOf(links) != -1) { //判断浏览器地址是否等于当前a元素的href属性
+					$(mynav[i]).parent().addClass('nav-hover')
+				}
+			}
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+  <!-- <meta name="full-screen" content="yes" /> -->
+  <!-- <meta name="x5-fullscreen" content="true" /> -->
+  <!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>国家材料环境腐蚀科学数据中心-{$currTitle}</title>
+  <link rel="stylesheet" href="__INDEX__/custom/css/bootstrap.min.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/reset.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/p.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/acm.css">
+  <link rel="stylesheet" href="__VENDOR__/layui/css/layui.css">
+  <style>
+    footer {
+      margin-top: 3%;
+    }
+	#real-table {
+		padding: 10px;
+		border: 2px solid #ccc;
+		border-radius: 5px;
+		overflow-x: scroll;
+	}
+	.Basicdata {
+		display: none;
+	}
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <header>{include file="common/header"}</header>
+    <nav>{include file="common/nav"}</nav>
+    <div class="width-1200 clearfix">
+      <div class="Basicdata">
+        {volist name="Cate" id="vo"}
+        <a class="Cate" href="javascript:;">
+          <img src="{$vo->icon}" alt="{$vo->id}">
+          <p>{$vo->name}</p>
+        </a>
+        {/volist}
+      </div>
+      <h4 style="font-size: 20px; padding: 10px;" class="jsh4">{$bdataName}</h4>
+      <div class="Periodic-table-box pr">
+
+        <div id="datas" class="Periodic-table DataTable clearfix">
+          {volist name="Src" id="vo"}
+          {$vo->content}
+          {/volist}
+        </div>
+
+        <div id="real-table">
+
+        </div>
+        <div class="table-paging c-333 sc-center">
+          <span class="prev">
+            {if condition="$prePage!=-1"}
+            <a href="/index/basic/datacontent?cid={$cid}&bid={$bid}&page={$prePage}">← 向前</a>
+            {else}
+            -
+            {/if}
+          </span>
+          <span class="num">{$curPage}/{$totalPage}</span>
+          <span class="next">
+            {if condition="$nextPage!=-1"}
+            <a href="/index/basic/datacontent?cid={$cid}&bid={$bid}&page={$nextPage}">向后 →</a>
+            {else}
+            -
+            {/if}
+          </span>
+      </div>
+      </div>
+    </div>
+    <footer>{include file="common/footer"}</footer>
+  </div>
+  <script src="__INDEX__/custom/js/jquery.min.js"></script>
+  <script src="__INDEX__/custom/js/p.js"></script>
+  <script src="__INDEX__/custom/js/bootstrap.min.js"></script>
+  <script src="__VENDOR__/layui/layui.js"></script>
+  <script>
+    $(function () {
+      var mynav = $('nav li').find('a'); //寻找导航的a元素 　　
+      for (var i = 0; i < mynav.length; i++) {
+        var links = mynav[i].getAttribute('href'); //取出每个链接的href属性的值
+        var myurl = document.location.href; //取出当前窗口的链接
+        if (myurl.indexOf(links) != -1) { //判断浏览器地址是否等于当前a元素的href属性
+          $(mynav[i]).parent().addClass('nav-hover')
+        }
+      }
+      $('.zhouqibiao').on('click', function () {
+        $('.Periodic-table').toggle()
+
+      })
+    })
+
+    layui.use(['form', 'layer'], function () {
+      var form = layui.form,
+        layer = layui.layer;
+
+      //监听提交
+      form.on('submit(formDemo)', function (data) {});
+
+      // 切换分类
+      $(".Cate").on('click', function () {
+        var cid = $(this).children('img').attr("alt");
+        location.href = "{:url('index/basic/index')}?cid=" + cid;
+      })
+
+      // 切换数据分类
+      $(".Data").on('click', function () {
+        var Did = $(this).children('.DataId').text();
+        var cid = $(this).siblings('.DataCid').text();
+        location.href = "{:url('index/basic/dataContent')}?cid=" + cid + "&bid=" + Did;
+      })
+
+    })
+  </script>
+
+  <script>
+    $(document).ready(e => {
+      $("#datas").hide()
+      let ths = getThs()
+      let data = getData()
+      let i = 0
+      let template = "<table class='table-p m25'> <tr>"
+      for (i = 0; i < ths.length; i++) {
+        template = template + "<td>" + ths[i] + "</td>"
+      }
+      template += "</tr>" //表头构建完成
+      for (i = 0; i < data.length; i++) {
+        let aData = data[i]
+        template += "<tr>"
+        for (var j = 0; j < aData.length; j++) {
+          template += "<td>" + aData[j] + "</td>"
+        }
+        template += "</tr>"
+      }
+      template += "</table>"
+
+      $("#real-table").html(template)
+    })
+
+
+
+    function getData() {
+      let datas = $("#datas table")
+      let dataSrc = []
+      for (var i = 0; i < datas.length; i++) {
+        let data = getTableData(datas[i])
+        dataSrc.push(data)
+      }
+      return dataSrc
+    }
+    //获取一个table的data
+    function getTableData(table) {
+      let rows = table.rows
+      let res = []
+      for (var i = 0; i < rows.length; i++) {
+        let content = rows[i].cells[1].innerHTML
+        res.push(content)
+      }
+
+      return res
+    }
+
+    function getThs() {
+      let datas = $("#datas")
+      let firstTable = $(datas.children('table')[0])[0]
+      let rows = firstTable.rows
+      let ths = []
+      for (var i = 0; i < rows.length; i++) {
+        let name = rows[i].cells[0].innerHTML
+        ths.push(name)
+      }
+      return ths
+    }
+  </script>
+</body>
+
+</html>

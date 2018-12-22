@@ -1,0 +1,159 @@
+{include file="public/header"}
+<!-- 内容主体区域 -->
+<div class="layui-body">
+  <div style="padding: 15px;">
+    {if condition="$data.type==1"}
+      <form style="margin-top:50px;" class="layui-form" action="./update" method="post">
+        <div class="layui-form-item">
+          <label class="layui-form-label">所属数据名</label>
+          <div class="layui-input-block">
+            <select name="cid" lay-verify="required">
+              {volist name="icates" id="vo"}
+                {if condition="$vo.id==$data.cid"}
+                <option value="{$vo.id}" selected>{$vo.name}</option>
+                {else}
+                <option value="{$vo.id}">{$vo.name}</option>
+                {/if}
+              {/volist}
+            </select>
+          </div>
+        </div>
+
+
+
+        <div class="layui-form-item">
+          <label class="layui-form-label">标题</label>
+          <div class="layui-input-block">
+            <!-- id -->
+            <input type="text" name="id" value="{$data.id}" style="display:none" required lay-verify="required" autocomplete="off" class="layui-input">
+            <!-- id -->
+            <!-- 室内/室外数据 type -->
+            <input type="text" name="type" value="{$data.type}" style="display:none" required lay-verify="required" autocomplete="off" class="layui-input">
+            <!-- 室内/室外数据 type -->
+            <input type="text" name="title" value="{$data.title}" required lay-verify="required" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">实验地址</label>
+          <div class="layui-input-block">
+            <input type="text" name="position" value="{$data.position}" required lay-verify="required" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">实验周期(月)</label>
+          <div class="layui-input-block">
+            <input type="number" name="cycle" value="{$data.cycle}" required lay-verify="required" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">材料名称</label>
+          <div class="layui-input-block">
+            <input type="text" name="mname" value="{$data.mname}" required lay-verify="required" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">数据内容</label>
+          <div class="layui-input-block">
+            <div id="editor">
+              {$data.content}
+            </div>
+          </div>
+          <textarea name="content" class="editor-content" value="{$data.content}" style="height: 0; overflow:hidden;" required lay-verify="required"></textarea>
+        </div>
+
+
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">修改</button>
+          </div>
+        </div>
+      </form>
+    {else}
+      <form style="margin-top:50px;" class="layui-form" action="./update" method="post">
+        <div class="layui-form-item">
+          <label class="layui-form-label">所属数据名</label>
+          <div class="layui-input-block">
+            <select name="cid" lay-verify="required">
+                {volist name="wcates" id="vo"}
+                {if condition="$vo.id==$data.cid"}
+                <option value="{$vo.id}" selected>{$vo.name}</option>
+                {else}
+                <option value="{$vo.id}">{$vo.name}</option>
+                {/if}
+              {/volist}
+            </select>
+          </div>
+        </div>
+
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">标题</label>
+            <div class="layui-input-block">
+              <!-- id -->
+              <input type="text" name="id" value="{$data.id}" style="display:none" required lay-verify="required" autocomplete="off" class="layui-input">
+              <!-- id -->
+              <!-- 室内/室外数据 type -->
+              <input type="text" name="type" value="{$data.type}" style="display:none" required lay-verify="required" autocomplete="off" class="layui-input">
+              <!-- 室内/室外数据 type -->
+              <input type="text" name="title" value="{$data.title}" required lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">实验地址</label>
+            <div class="layui-input-block">
+              <input type="text" name="position" value="{$data.position}" required lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">实验周期(月)</label>
+            <div class="layui-input-block">
+              <input type="number" name="cycle" value="{$data.cycle}" required lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">材料名称</label>
+            <div class="layui-input-block">
+              <input type="text" name="mname" value="{$data.mname}" required lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">数据内容</label>
+            <div class="layui-input-block">
+              <div id="editor">
+                {$data.content}
+              </div>
+            </div>
+            <textarea name="content" id="content" class="editor-content" value="{$data.content}" style="height: 0; overflow:hidden;" required lay-verify="required"></textarea>
+          </div>
+
+
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">增加</button>
+          </div>
+        </div>
+      </form>
+    {/if}
+  </div>
+</div>
+
+<script src="/static/vendor/wangeditor/wangEditor.js"></script>
+<script type="text/javascript">
+  $(".editor-content").hide()
+  var E = window.wangEditor
+  var editor = new E('#editor')
+  var $text1 = $('#content')
+  editor.customConfig.onchange = function (html) {
+    // 监控变化，同步更新到 textarea
+    $text1.val(html)
+  }
+  editor.create()
+  // 初始化 textarea 的值
+  $text1.val(editor.txt.html())
+
+  layui.use('form', function () {
+    var form = layui.form;
+  });
+</script>
+
+{include file="public/footer"}

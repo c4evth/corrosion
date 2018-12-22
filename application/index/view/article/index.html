@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+  <!-- <meta name="full-screen" content="yes" /> -->
+  <!-- <meta name="x5-fullscreen" content="true" /> -->
+  <!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>国家材料环境腐蚀科学数据中心 - {$currTitle}</title>
+  <link rel="stylesheet" href="__INDEX__/custom/css/bootstrap.min.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/reset.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/p.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/acm.css">
+  <style>
+    .platform-content.padding2 {
+      padding-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <header>{include file="common/header"}</header>
+    <nav>{include file="common/nav"}</nav>
+    <div class="width-1200">
+      <div class="platform pr" style="width: 80%; margin: 0 auto; padding-top: 40px">
+        <div class="platform-content padding padding2" id="pone">
+          <h4 class="c-000 sc-center">{$article.title}</h4>
+          <p class="c-999 sc-center">{$article.ctime}  作者：{$article.authors}<br />
+            来源：{$article.src}
+          </p>
+          <p id="content" style="display: none;">{$article.content}</p>
+          <p class="c-000">
+              <iframe name="cmsCon" id="cmsCon" class="cmsCon" frameborder="0" width="100%" scrolling="no" height="auto"></iframe>
+              <script type="text/javascript">
+              $(document).ready(
+                e => {
+                  let content = $("#content").html()
+                  $('#cmsCon').contents().find('body').html(content);
+                  autoHeight();  //动态调整高度
+                }
+              );
+              
+               
+              var count = 0;
+                    var autoSet = window.setInterval('autoHeight()',500);
+                  function autoHeight(){
+                    var mainheight;
+                    count++;
+                    if(count == 1){
+                      mainheight = $('.cmsCon').contents().find("body").height()+50;
+                    }else{
+                      mainheight = $('.cmsCon').contents().find("body").height()+24;
+                    }
+                    $('.cmsCon').height(mainheight);
+                    if(count == 5){
+                      window.clearInterval(autoSet);
+                    }
+                    
+                  }
+              </script>
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer>{include file="common/footer"}</footer>
+  </div>
+  <script src="__INDEX__/custom/js/jquery.min.js"></script>
+  <script src="__INDEX__/custom/js/p.js"></script>
+  <script src="__INDEX__/custom/js/bootstrap.min.js"></script>
+  <script>
+  </script>
+</body>
+
+</html>

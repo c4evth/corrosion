@@ -1,0 +1,61 @@
+{include file='public/header'}
+
+
+<!-- 内容主体区域 -->
+<div class="layui-body">
+    <div style="padding: 15px;">
+        <table class="layui-table">
+            <colgroup>
+                <col width="80">
+                <col>
+                <col width="150">
+                <col width="100">
+                <col width="300">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>账号</th>
+                    <th>最后登录时间</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--循环输出管理员列表-->
+                {volist name="MessagerList" id="vo"}
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.name}</td>
+                    <td>{$vo.lltime}</td>
+                    <td>
+                        <span class="layui-badge layui-bg-green">正常</span>
+                    </td>
+                    <td>
+                        <a href="#" class="layui-btn layui-btn-warm layui-btn-mini">
+                            <i class="layui-icon">&#xe642;</i>编辑</a>
+                        <a href="{:url('messager/del')}?id={$vo.id}" class="layui-btn layui-btn-danger layui-btn-mini del">
+                            <i class="layui-icon">&#xe640;</i>删除</a>
+                    </td>
+                </tr>
+                {/volist}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+     layui.use('layer', function(){
+        var layer = layui.layer;
+        $(".del").on('click',function(){
+            var url = $(this).attr('href');
+            layer.confirm('确定要删除该管理员吗?', {icon: 3, title:'温馨提示'}, function(index){
+                location.href = url;
+                layer.close(index);
+            });
+            return false;
+        });
+    });
+</script>
+
+{include file="public/footer">

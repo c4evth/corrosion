@@ -1,0 +1,89 @@
+{include file="public/header"}
+  <!-- 内容主体区域 -->
+<div class="layui-body">
+  <div style="padding: 15px;">
+    <form style="margin-top:50px;" class="layui-form" action="./update" method="post">
+	<div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-block">
+          <input type="text" name="id" style="display: none;" required lay-verify="required" value="{$user.id}" autocomplete="off" class="layui-input">
+          <input type="text" name="name" required lay-verify="required" value="{$user.name}" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">姓名</label>
+        <div class="layui-input-block">
+          <input type="text" name="id" style="display: none;" required lay-verify="required" value="{$user.id}" autocomplete="off" class="layui-input">
+          <input type="text" name="realname" required lay-verify="required" value="{$user.name}" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">密码</label>
+        <div class="layui-input-block">
+          <input type="password" name="pass" required lay-verify="required" value="{$user.pass}" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">电话</label>
+        <div class="layui-input-block">
+          <input type="text" name="phone" required lay-verify="required" value="{$user.phone}" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">学历</label>
+        <div class="layui-input-block">
+          <input type="text" name="education" required lay-verify="required" value="{$user.education}" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">邮箱</label>
+        <div class="layui-input-block">
+          <input type="text" name="email" required lay-verify="required" value="{$user.email}" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">职务</label>
+        <div class="layui-input-block">
+          <input type="text" name="job" required lay-verify="required" value="{$user.job}" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">工作单位</label>
+        <div class="layui-input-block">
+          <input type="text" name="workunit" required lay-verify="required" value="{$user.workunit}" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">单位性质</label>
+        <div class="layui-input-block">
+          <input type="text" name="unittype" required lay-verify="required" value="{$user.unittype}" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">省份</label>
+        <div class="layui-input-block">
+          <input type="text" name="province" required lay-verify="required" value="{$user.province}" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">座机</label>
+        <div class="layui-input-block">
+          <input type="text" name="telephone" required lay-verify="required" value="{$user.telephone}" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">通信地址</label>
+        <div class="layui-input-block">
+          <input type="text" name="address" required lay-verify="required" value="{$user.address}" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button class="layui-btn" lay-submit lay-filter="formDemo">修改</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{include file="public/footer"}

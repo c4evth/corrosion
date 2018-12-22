@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+	<!-- <meta name="full-screen" content="yes" /> -->
+	<!-- <meta name="x5-fullscreen" content="true" /> -->
+	<!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>国家材料环境腐蚀科学数据中心-室外数据</title>
+	<link rel="stylesheet" href="__INDEX__/custom/css/bootstrap.min.css">
+	<link rel="stylesheet" href="__INDEX__/custom/css/reset.css">
+	<link rel="stylesheet" href="__INDEX__/custom/css/p.css">
+	<link rel="stylesheet" href="__INDEX__/custom/css/acm.css">
+	<link rel="stylesheet" href="__VENDOR__/layui/css/layui.css">
+
+	<style>
+		footer {
+        margin-top: 3%;
+    }
+
+    .dataBox {
+        width: 71%;
+    }
+    </style>
+</head>
+
+<body>
+	<div class="main">
+		<div class="width-1200">
+			<div class="dataBox">
+				<div class="clearfix">
+					<div class="select sc-fl">
+						<select name="cate" id="NameWild" lay-filter="search">
+							{volist name="parentDcate" id="vo"}
+							<option {if condition="$currName eq $vo->name" } selected {/if}>{$vo->name}</option>
+							{/volist}
+						</select>
+					</div>
+					<div class="search2 sc-fl">
+						<input id="ValueWlid" type="text">
+						<button id="Search">搜索</button>
+					</div>
+				</div>
+				<div class="title m25">
+					<b></b><span>开路电位</span>
+					<span hidden>{$cid}</span>
+				</div>
+				<!--<ul class="datalist-ul">
+                        <li class="clearfix"><a href="data_fs.html"><img src="__INDEX__/custom/images/a46.png" alt=""><p class="sc-fl c-666">极化测试</p><span class="sc-fr c-666">3312</span></a></li>
+                        <li class="clearfix"><a href="data_fs.html"><img src="__INDEX__/custom/images/a46.png" alt=""><p class="sc-fl c-666">阻抗测试</p><span class="sc-fr c-666">3312</span></a></li>
+                    </ul>-->
+				<ul class="equipmentdata-ul" style="margin-top:20px;">
+					{volist name="Data" id="vo"}
+					<li>
+						<h5 style="margin-top:-10px;"><a class="getViewer" href="#">{$vo->title}</a><span hidden class="ID">{$vo->id}</span></h5>
+						<span hidden class="dataCid">{$vo->cid}</span>
+						<div style="height:130px" class="clearfix">
+							<a href="javascrip:;" class="sc-fl left">
+								<table>
+									<tbody>
+										<tr>
+											<td>材料名称：{$vo->title}</td>
+											<td>材料类别：{$currType}</td>
+										</tr>
+										<tr>
+											<td>实验周期（月）：{$vo->cycle}</td>
+											<td>试验地点：{$vo->position}</td>
+										</tr>
+									</tbody>
+								</table>
+							</a>
+							<div class="sc-fl right clearfix">
+								<div class="sc-fl browse">浏览量：{$vo->viewer}</div>
+								<div class="sc-fr operation">
+									<p class="sc-fl"><img class="collection" src="__INDEX__/custom/images/a40.png" alt="{$vo->id}"><span class="Collect">收藏
+											{$vo->collect}</span></p>
+									<p class="sc-fl"><img src="__INDEX__/custom/images/a41.png" alt=""><span>引用</span></p>
+									<p class="sc-fl"><img src="__INDEX__/custom/images/a42.png" alt=""><span>相关文章</span></p>
+									<p class="sc-fl">
+										<a href="/index/personal/myDownload?id={$vo->id}" target="_blank">
+											<img src="__INDEX__/custom/images/a44.png" alt="{$vo->id}">
+											下载</a></p>
+								</div>
+							</div>
+						</div>
+					</li>
+					{/volist}
+					<div class="table-paging c-333 sc-center">
+						<span class="prev">
+							{if condition="$hasPrePage"}
+							<a href="/index/outdoor/dataShow?id={$cid}&search={$search}&name={$currName}&page={$Page-1}">← 向前</a>
+							{else}
+							-
+							{/if}
+						</span>
+						<span id="PageWild" class="num">{$Page}</span>
+						<span class="next">
+							{if condition="$hasNextPage"}
+							<a href="/index/outdoor/dataShow?id={$cid}&search={$search}&name={$currName}&page={$Page+1}">向后 →</a>
+							{else}
+							-
+							{/if}
+						</span>
+					</div>
+				</ul>
+			</div>
+		</div>
+		
+		<footer></footer>
+	</div>
+	<script src="__INDEX__/custom/js/jquery.min.js"></script>
+	<script src="__INDEX__/custom/js/p.js"></script>
+	<script src="__INDEX__/custom/js/bootstrap.min.js"></script>
+	<script src="__VENDOR__/layui/layui.js"></script>
+	<script>
+		$(function () {
+
+			var mynav = $('nav li').find('a'); //寻找导航的a元素 　　
+			for (var i = 0; i < mynav.length; i++) {
+				var links = mynav[i].getAttribute('href'); //取出每个链接的href属性的值
+				var myurl = document.location.href; //取出当前窗口的链接
+				if (myurl.indexOf(links) != -1) { //判断浏览器地址是否等于当前a元素的href属性
+					$(mynav[i]).parent().addClass('nav-hover')
+				}
+			}
+			$('.ol-down').on('click', function (e) {
+				e.stopPropagation();
+
+			})
+			$('.ol-down li').on('click', function () {
+				$(this).addClass('cur').siblings().removeClass('cur')
+
+			})
+			$('.platform-aside .parentA').on('click', function () {
+				$(this).next().slideToggle()
+
+			})
+			$('.ul-down .toggle-li').on('click', function () {
+				$(this).find('img').toggleClass('xia')
+				$(this).find('.ol-down').slideToggle()
+
+			})
+		})
+
+		layui.use(['form', 'layer','laypage'], function () {
+			var form = layui.form,layer = layui.layer;
+
+			// var count = $("#Count").text();,laypage = layui.laypage
+			// laypage.render({
+			// 	elem: 'demo0' //注意，这里的 test1 是 ID，不用加 # 号
+			// 	, count: count //数据总数，从服务端得到
+			// 	, limit:2
+			// });
+
+			//监听提交
+			form.on('submit(formDemo)', function (data) { });
+
+			// 监听检索事件（layui）
+			form.on('select(Name)', function (data) {
+			});
+
+			$("#Search").on("click", function () {
+				var name = $("#NameWild option:selected").text();
+				var search = $("#ValueWlid").val();
+				var page = $("#PageWild").text();
+				// alert(search);
+				location.href = "{:url('index/Outdoor/dataShow')}?search=" + search + "&name=" + name + "&page=" + page;
+				// alert("{:url('index/outdoor/dataShow')}?search=" + search + "&name=" + name);
+			})
+
+			// 点击收藏
+			$(".collection").on('click', function () {
+				var id = $(this).attr("alt");
+				var type = 'outdoor';
+				$.ajax({
+					'type': 'post',
+					'url': "{:url('index/personal/addCollect')}",
+					'data': {
+						'id': id,
+						'type': type,
+					},
+					'datatype': 'json',
+					success: function (msg) {
+						if (msg == 1) {
+							layer.msg('添加收藏成功');
+						} else if (msg == 2) {
+							layer.msg('请先登录')
+						} else {
+							layer.msg('您已经收藏过此条目');
+						}
+					}
+				})
+			})
+
+			// 点击进入详情页并浏览数加1
+			$(".getViewer").on('click', function () {
+				var id = $(this).siblings(".ID").text();
+				$.ajax({
+					'type': 'post',
+					'url': "{:url('index/outdoor/addDataView')}",
+					'data': {
+						'id': id,
+					},
+					'datatype': 'json',
+					success: function (msg) {
+						if (msg == 'ok') {
+							location.href = "{:url('index/outdoor/dataContent')}?id=" + id;
+						}
+					}
+				})
+			})
+
+			// 点击下载
+			$(".download").on('click', function () {
+				var id = $(this).attr("alt");
+				$.ajax({
+					'type': 'post',
+					'url': "{:url('index/personal/myDownload')}",
+					'data': {
+						'id': id,
+					},
+					'datatype': 'json',
+					success: function (msg) {
+						if (msg == 1) {
+							layer.msg('正在下载请等待……');
+						} else if (msg == 2) {
+							layer.msg('请先登录');
+						} else {
+							layer.msg('您已经下载过此条目');
+						}
+					}
+				})
+			})
+
+		})
+	</script>
+</body>
+
+</html>

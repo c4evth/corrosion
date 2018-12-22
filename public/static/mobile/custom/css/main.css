@@ -1,0 +1,785 @@
+/****************************************************/
+/******** 主页 ***************************************/
+/****************************************************/
+
+.swipper {
+  height         : 18rem;
+  background     : #ddd;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  overflow       : hidden;
+}
+
+.swipper p {
+  font-size: 2rem;
+}
+
+.card {
+  width        : 100%;
+  padding      : 10px 15px;
+  padding-top  : 0;
+  box-sizing   : border-box;
+  background   : #fff;
+  margin-bottom: 1rem;
+}
+
+.card .head {
+  width          : 100%;
+  height         : 3rem;
+  padding        : 10px 0;
+  display        : flex;
+  align-items    : center;
+  justify-content: left;
+  position       : relative;
+  border-bottom  : 1px solid #ddd;
+}
+
+.card .head .title {
+  font-size   : 2rem;
+  font-weight : bold;
+  padding-left: 1rem;
+  border-left : 0.3rem solid #ff7c42;
+  float       : left;
+  color       : #ff7c42;
+}
+
+.card .head .more {
+  position: absolute;
+  right   : 0;
+  color   : #666;
+}
+.card .content {
+  padding-left: 0.3rem;
+  box-sizing  : border-box;
+  overflow-x  : scroll;
+  overflow-y  : hidden;
+}
+.card .content .active p {
+  height     : 1.5rem;
+  line-height: 1.5rem;
+  color      : #444;
+  position   : relative;
+  font-size  : 1.5rem;
+  margin     : 1rem 0;
+}
+.card .content .active p span {
+  font-size: 1.3rem;
+  position : absolute;
+  right    : 0;
+  color    : #888;
+}
+/* 训练营 */
+.card .content .train {
+  /* display   : flex; */
+  overflow-x                : scroll;
+  -webkit-overflow-scrolling: touch;
+  height                    : 11rem;
+  width                     : 52.5rem;
+  padding                   : 1rem 0;
+}
+.train .train-card {
+  /* flex           : 1; */
+  display             : flex;
+  justify-content     : center;
+  align-items         : center;
+  width               : 16.5rem;
+  height              : 11rem;
+  float               : left;
+  background-repeat   : no-repeat;
+  background-size     : 100% 100%;
+  -moz-background-size: 100% 100%;
+  margin              : 0 .5rem;
+  box-sizing          : border-box;
+}
+.train-card p {
+  text-align: center;
+  color     : #fff;
+  font-size : 16px;
+}
+
+/* 学习心情 */
+.mood-item {
+  display        : flex;
+  justify-content: center;
+  height         : 5rem;
+  padding        : .8rem 0;
+  border-bottom  : .1rem solid #ddd;
+}
+
+.mood-item div {
+  float : left;
+  height: 100%;
+}
+.mood-item div.avatar {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+}
+.mood-item div.avatar {
+  width: 18%;
+}
+.mood-item div.avatar img {
+  height       : 100%;
+  border-radius: 50%;
+}
+
+.mood-item div.content {
+  width         : 67%;
+  padding       : 0 5px;
+  display       : flex;
+  flex-direction: column;
+}
+.mood-item div.content p {
+  height       : auto;
+  font-size    : 1.4rem;
+  width        : 100%;
+  overflow     : hidden;
+  white-space  : nowrap;
+  text-overflow: ellipsis;
+  color        : #444;
+}
+
+.mood-item div.content p.name {
+  font-size     : 1.6rem;
+  padding-bottom: .5rem;
+}
+.mood-item div.other {
+  width   : 15%;
+  position: relative;
+}
+.mood-item div.other p {
+  color: #888;
+}
+.mood-item div.other p.time {
+  position: absolute;
+  right   : 0;
+  top     : 0;
+}
+.mood-item div.other p.like {
+  position: absolute;
+  right   : 0;
+  bottom  : 0;
+}
+.mood-item div.other p.like img {
+  width : 1.5rem;
+  height: 1.5rem;
+}
+
+
+/****************************************************/
+/******** 训练营 *************************************/
+/****************************************************/
+
+.search-container {
+  height         : 5rem;
+  padding        : 1rem 1.5rem;
+  width          : 100%;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  box-sizing     : border-box;
+}
+.search-container input {
+  flex         : 5;
+  padding      : .7rem .9rem;
+  border-radius: .5rem;
+  border       : none;
+  outline      : none;
+  text-align   : center;
+  font-size    : 1.5rem;
+}
+
+.search-container span {
+  flex      : 1;
+  text-align: center;
+  color     : #666;
+  font-size : 1.7rem;
+}
+.subject-container {
+  background   : #fff;
+  width        : 100%;
+  padding      : .7rem .4rem;
+  box-sizing   : border-box;
+  overflow     : hidden;
+  margin-bottom: 5rem;
+}
+.subject-container .subjects {
+  width: 100%;
+}
+.subject-container .subjects .subject {
+  float     : left;
+  width     : 33.3%;
+  overflow  : hidden;
+  box-sizing: border-box;
+  padding   : .4rem;
+}
+.subject-container .subjects .subject .subj-card {
+  box-shadow   : 0rem .1rem .2rem 0rem #ff7b4263;
+  border-radius: .5rem;
+}
+.subject-container .subjects .subject .subj-card img {
+  width: 100%;
+}
+.subject-container .subjects .subject .subj-card p {
+  text-align: center;
+  padding   : .3rem 0;
+  font-size : 1.3rem;
+  color     : #666
+}
+
+.payment-container {
+  height         : 5rem;
+  width          : 100%;
+  background     : #fff;
+  display        : flex;
+  justify-content: center;
+  flex-direction : column;
+  align-items    : left;
+  position       : fixed;
+  bottom         : 5rem;
+  box-shadow     : 0 0rem .6rem 0 #ff7b4263;
+}
+.payment-container button {
+  position     : absolute;
+  padding      : 0;
+  margin       : 0;
+  right        : 0;
+  height       : 5rem;
+  line-height  : 5rem;
+  width        : 14rem;
+  text-align   : center;
+  color        : #fff;
+  font-size    : 1.8rem;
+  background   : #ff7c42;
+  border       : none;
+  border-radius: none;
+}
+
+.payment-container p {
+  padding-left: .8rem;
+}
+.payment-container p.title {
+  font-size: 1.6rem;
+  color    : #ff7c42;
+}
+.payment-container p.remark {
+  color: #888;
+}
+
+
+/****************************************************/
+/******** 学习心情 ***********************************/
+/****************************************************/
+
+.mood-header {
+  height     : 5rem;
+  background : #fdd2be;
+  padding    : .5rem 1.5rem;
+  box-sizing : border-box;
+  line-height: 5rem;
+  display    : flex;
+  align-items: center;
+  position   : relative;
+}
+.mood-header img {
+  float        : left;
+  height       : 100%;
+  border-radius: 50%;
+  margin-right : 1rem;
+}
+.mood-header span {
+  font-size  : 1.6rem;
+  color      : #ff7c42;
+  line-height: 5rem;
+  position   : absolute;
+  right      : 1rem;
+}
+.mood-detail-container {
+  padding   : 2rem 1.5rem;
+  box-sizing: border-box;
+  background: #fff;
+}
+.mood-detail-container .mood-detail-item {
+  border-left  : 1px solid #ff7c42;
+  position     : relative;
+  padding      : 1rem 2rem;
+  padding-right: 0;
+}
+.mood-detail-container .mood-detail-item .dot {
+  width        : .8rem;
+  height       : .8rem;
+  border-radius: .8rem;
+  background   : #ff7c42;
+  border       : 2px solid #ffc0a5;
+  position     : absolute;
+  left         : -.6rem;
+  top          : -.4rem;
+}
+.mood-detail-container .mood-detail-item .time {
+  font-size     : 1.6rem;
+  padding-bottom: 1rem;
+}
+.mood-detail-container .mood-detail-item .detail {
+  display       : flex;
+  align-items   : center;
+  flex-direction: row;
+}
+.mood-detail-container .mood-detail-item .detail div {
+  width: 100%;
+}
+.mood-detail-container .mood-detail-item img.avatar {
+  width        : 4.5rem;
+  border-radius: 50%;
+}
+.mood-detail-container .mood-detail-item .detail .name {
+  width       : 100%;
+  font-size   : 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.mood-detail-container .mood-detail-item .detail .content {
+  width        : 100%;
+  height       : 2rem;
+  overflow     : hidden;
+  white-space  : nowrap;
+  text-overflow: ellipsis;
+  padding-left : 1.5rem;
+}
+.mood-detail-container .mood-detail-item .detail .like {
+  position: absolute;
+  right   : 0;
+  bottom  : -1.4rem;
+  width   : 1.5rem;
+}
+
+/****************************************************/
+/******** 学习计划 ***********************************/
+/****************************************************/
+.plan-header {
+  height     : 5rem;
+  background : #fdd2be;
+  padding    : .5rem 1.5rem;
+  box-sizing : border-box;
+  line-height: 5rem;
+  display    : flex;
+  align-items: center;
+  position   : relative;
+}
+.plan-header img {
+  float        : left;
+  height       : 100%;
+  border-radius: 50%;
+  margin-right : 1rem;
+}
+.plan-header span {
+  font-size  : 4rem;
+  color      : #fff;
+  line-height: 1.5;
+  position   : absolute;
+  right      : 1rem;
+}
+.sys-recommend {
+  font-size : 1.8rem;
+  padding   : 1rem 1.5rem;
+  background: #fff;
+}
+
+.plan-detail-container {
+  padding    : 2rem 1.5rem;
+  padding-top: .5rem;
+  box-sizing : border-box;
+  background : #fff;
+}
+.plan-detail-container .plan-detail-item {
+  border-left  : 1px solid #ff7c42;
+  position     : relative;
+  padding      : .7rem 2rem;
+  padding-right: 0;
+}
+.plan-detail-container .plan-detail-item .dot {
+  width        : .8rem;
+  height       : .8rem;
+  border-radius: .8rem;
+  background   : #ff7c42;
+  border       : 2px solid #ffc0a5;
+  position     : absolute;
+  left         : -.6rem;
+  top          : -.4rem;
+}
+.plan-detail-container .plan-detail-item .time {
+  font-size     : 1.7rem;
+  padding-bottom: .5rem;
+  position      : relative;
+}
+.plan-detail-container .plan-detail-item .time span {
+  position : absolute;
+  top      : 0;
+  right    : 0;
+  font-size: 1.9rem;
+  color    : #999;
+}
+.plan-detail-container .plan-detail-item .detail {
+  display       : flex;
+  align-items   : center;
+  flex-direction: row;
+}
+.plan-detail-container .plan-detail-item .detail ul {
+  width       : 100%;
+  margin      : 0;
+  padding-left: 2rem;
+}
+.plan-detail-container .plan-detail-item .detail ul li {
+  color    : #888;
+  font-size: 1.4rem;
+  width    : 100%;
+  position : relative;
+  padding  : .2rem 0;
+}
+.plan-detail-container .plan-detail-item .detail ul li span {
+  color    : #ff7c42;
+  font-size: 1.3rem;
+  float    : rigit;
+  position : absolute;
+  right    : 0;
+}
+#time {
+  width   : 0;
+  height  : 0;
+  position: fixed;
+}
+
+/****************************************************/
+/******** 个人中心 ***********************************/
+/****************************************************/
+
+.user-card-container {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  flex-direction : row;
+  padding        : 1rem;
+}
+.user-card-container .user-card {
+  display          : flex;
+  justify-content  : center;
+  align-items      : center;
+  flex-direction   : row;
+  width            : 100%;
+  padding          : 4rem 2.5rem;
+  background-image : url("/static/mobile/image/user-card-bg.png");
+  background-repeat: no-repeat;
+  background-size  : 100% 100%;
+  border-radius    : .5rem;
+  position         : relative;
+  z-index          : 1;
+}
+.user-card-container .user-card:after {
+  position        : absolute;
+  left            : 0;
+  top             : 0;
+  display         : block;
+  width           : 100%;
+  height          : 100%;
+  background-color: rgba(240, 240, 240, 0.6);
+  content         : attr(data-text);
+  transition      : all 1s ease;
+  z-index         : -1;
+}
+
+.user-card-container .user-card p.not-login {
+  font-size: 1.8rem;
+  color    : #444444;
+}
+.user-card-container .left img {
+  width        : 7rem;
+  height       : 7rem;
+  border-radius: 50%;
+}
+.user-card-container .left {
+  flex           : 1;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+}
+.user-card-container .right {
+  flex           : 5;
+  display        : flex;
+  justify-content: center;
+  /* align-items    : center; */
+  flex-direction: column;
+  padding-left  : 2rem;
+}
+.user-card-container .right p {
+  padding  : .3rem 0;
+  font-size: 1.4rem;
+  color    : #444;
+  position : relative;
+}
+.user-card-container .right p.name {
+  font-size: 1.7rem;
+}
+.user-card-container .right p a {
+  position   : absolute;
+  right      : 0;
+  text-shadow: none;
+  font-size  : 1.3rem;
+  color      : #888;
+}
+/* 我的课程 */
+.card .content .mysubject {
+  display                   : flex;
+  overflow-x                : scroll;
+  -webkit-overflow-scrolling: touch;
+  width                     : 100%;
+  padding                   : 1rem 0;
+}
+.mysubject .mysubject-card {
+  flex           : 1;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  /* width               : 33.3%; */
+  height              : 8rem;
+  float               : left;
+  background-repeat   : no-repeat;
+  background-size     : 100% 100%;
+  -moz-background-size: 100% 100%;
+  margin              : 0 .3rem;
+  box-sizing          : border-box;
+}
+.mysubject-card p {
+  text-align: center;
+  color     : #fff;
+  font-size : 16px;
+}
+
+/* 孩子证书 */
+.card .content .diploma {
+  display                   : flex;
+  overflow-x                : scroll;
+  -webkit-overflow-scrolling: touch;
+  width                     : 100%;
+  padding                   : 1rem 0;
+}
+.diploma .diploma-card {
+  flex           : 1;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  /* width               : 33.3%; */
+  height              : 8rem;
+  float               : left;
+  background-repeat   : no-repeat;
+  background-size     : 100% 100%;
+  -moz-background-size: 100% 100%;
+  margin              : 0 .3rem;
+  box-sizing          : border-box;
+}
+.diploma-card p {
+  text-align: center;
+  color     : #fff;
+}
+.mysubject-card, .diploma-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.mysubject-card p, .diploma-card p {
+  z-index  : 1;
+  font-size: 1.5rem;
+}
+
+.mysubject-card:after, .diploma-card:after {
+  position        : absolute;
+  left            : 0;
+  top             : 0;
+  display         : block;
+  width           : 100%;
+  height          : 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  content         : attr(data-text);
+  transition      : all 1s ease;
+}
+
+.cell .right .avatar {
+  width        : 4rem;
+  height       : 4rem;
+  border-radius: 50%;
+}
+
+.cell-group div.avatar {
+  height: 6rem;
+}
+
+/****************************************************/
+/******** 我的课程 ***********************************/
+/****************************************************/
+.train-process {
+  display    : flex;
+  align-items: center;
+  width      : 75%;
+  margin     : 0 auto;
+}
+
+.train-process .text {
+  width: 25%;
+}
+.train-process .process-container {
+  width: 75%;
+}
+
+
+
+/****************************************************/
+/******** 分析报告 *************************************/
+/****************************************************/
+
+.analysis-select {
+  justify-content: left;
+  background     : #ffc0a5;
+}
+.analysis-container {
+  padding         : 1rem 1.5rem;
+  background-color: #fff;
+}
+
+.analysis-container .analysis-item {
+  width        : 100%;
+  display      : flex;
+  justify-items: center;
+  padding      : 1rem 0;
+}
+.analysis-item .left, .analysis-item .mid, .analysis-item .right {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+}
+.analysis-container .analysis-item .left {
+  flex: 1;
+}
+
+.analysis-container .analysis-item .left img {
+  width : 3.5rem;
+  height: 3.5rem;
+}
+
+.analysis-container .analysis-item .mid {
+  flex: 4;
+}
+
+.analysis-container .analysis-item .right {
+  flex: 1;
+}
+
+.share-analysis {
+  display        : flex;
+  justify-content: right;
+  align-items    : center;
+  padding        : 1rem 1.5rem;
+  flex-direction : row-reverse;
+}
+
+.share-analysis button {
+  margin-left: 1rem;
+}
+
+.share-pop-container {
+  position        : fixed;
+  height          : 100%;
+  width           : 100%;
+  z-index         : 3;
+  top             : 0;
+  left            : 0;
+  display         : none;
+  background-color: rgba(80, 80, 80, .7);
+}
+
+.share-pop-container .share-pop {
+  height          : 12rem;
+  background-color: #fff;
+  position        : absolute;
+  bottom          : 0;
+  width           : 100%;
+}
+
+.share-pop-container .share-pop p {
+  padding   : 1rem 1.5rem;
+  box-sizing: border-box;
+  font-size : 1.6rem;
+  color     : #444;
+  width     : 100%;
+}
+
+.share-pop-container .share-pop p img {
+  float : right;
+  width : 2rem;
+  height: 2rem;
+}
+
+.share-pop-container .share-pop .share-items {
+  width  : 100%;
+  display: flex;
+  /* align-content  : center; */
+  /* justify-content: center; */
+  flex-direction: row;
+  padding       : 0 1.5rem;
+  margin-top    : 1rem;
+}
+
+.share-pop-container .share-pop .share-items .share-item {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  flex-direction : column;
+  padding        : 0 1rem;
+}
+
+.share-pop-container .share-pop .share-item img {
+  width : 3rem;
+  height: 3rem;
+}
+
+.share-pop-container .share-pop .share-item span {
+  font-size : 1.5rem;
+  color     : #444;
+  margin-top: .5rem;
+}
+
+
+/****************************************************/
+/******** 孩子动态 ***********************************/
+/****************************************************/
+
+.analysis-select span {
+  position : absolute;
+  right    : 1.5rem;
+  font-size: 1.7rem;
+  color    : #ff7c42;
+}
+
+.activity-tree {
+  padding-top: 2rem;
+}
+.activity-tree .plan-detail-item .detail ul li span {
+  display        : flex;
+  justify-content: center;
+  font-size      : 1.4rem;
+}
+.activity-tree .plan-detail-item .detail ul li span img {
+  width        : 1.6rem;
+  height       : 1.6rem;
+  padding-right: .4rem;
+}
+
+/****************************************************/
+/******** 登录 ***************************************/
+/****************************************************/
+
+.login-form {
+  padding: 1rem 1.5rem;
+}
+
+.login-form button.submit {
+  margin-left: 9.5rem;
+}

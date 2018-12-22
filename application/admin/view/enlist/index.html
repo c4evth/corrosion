@@ -1,0 +1,89 @@
+{include file='public/header'}
+
+<!-- 内容主体区域 -->
+<div class="layui-body">
+	<div style="padding: 15px;">
+		<h3>组织分类列表</h3><br>
+		<a href="/admin/enlist/add" class="layui-btn">添加报名</a>
+		<table class="layui-table">
+			<colgroup>
+				<col width="80">
+				<col>
+				<col width="100">
+				<col width="80">
+				<col width="80">
+				<col width="100">
+				<col width="100">
+				<col width="120">
+				<col width="150">
+				<col width="220">
+			</colgroup>
+			<thead>
+				<tr>
+					<th style="text-align:center">ID</th>
+					<th style="text-align:center">单位</th>
+					<th style="text-align:center">会议编号</th>
+					<th style="text-align:center">有论文</th>
+					<th style="text-align:center">做报告</th>
+					<th style="text-align:center">报名状态</th>
+					<th style="text-align:center">姓名</th>
+					<th style="text-align:center">电话</th>
+					<th style="text-align:center">邮箱</th>
+					<th style="text-align:center">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				{volist name="list" id="vo"}
+				<tr>
+					<td style="text-align:center">{$vo.id}</td>
+					<td style="text-align:center">{$vo.org}</td>
+					<td style="text-align:center">{$vo.bid}</td>
+					<td style="text-align:center">{if condition="$vo.hasPaper eq 0"}否{else}是{/if}</td>
+					<td style="text-align:center">{if condition="$vo.isReport eq 0"}否{else}是{/if}</td>
+					<td style="text-align:center">{$vo.status}</td>
+					<td style="text-align:center">{$vo.name}</td>
+					<td style="text-align:center">{$vo.phone}</td>
+					<td style="text-align:center">{$vo.email}</td>
+					<td style="text-align:center">
+						<a href="/admin/enlist/edit?id={$vo.id}" class="layui-btn layui-btn-warm layui-btn-mini">
+							<i class="layui-icon">&#xe642;</i>编辑</a>
+						<a href="/admin/enlist/del?id={$vo.id}" class="layui-btn layui-btn-danger layui-btn-mini del">
+							<i class="layui-icon">&#xe640;</i>删除</a>
+					</td>
+				</tr>
+				{/volist}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<script>
+	layui.use('layer', function () {
+		var layer = layui.layer;
+		$(".del").on('click', function () {
+			var url = $(this).attr('href');
+			layer.confirm('确定要删除吗?', {
+				icon: 3,
+				title: '温馨提示'
+			}, function (index) {
+				$.ajax({
+					type: "get",
+					url: url,
+					dataType: "json",
+					success: function (data) {
+						if (data.status == 0) {
+							layer.msg(data.msg);
+
+						} else {
+							layer.msg(data.msg);
+							location.reload();
+						}
+					}
+				})
+			});
+			return false;
+		});
+	});
+</script>
+
+{include file="public/footer">

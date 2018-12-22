@@ -1,0 +1,214 @@
+.main {
+    width    : 100%;
+    width    : expression(document.body.clientWidth <=1200? "1200px": "auto");
+    min-width: 1200px;
+}
+
+
+
+
+
+
+
+/*footer {
+    width      : 100%;
+    background : #393939;
+    height     : 450px;
+    padding-top: 3%;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer a: focus,
+footer a: hover {
+    color          : #fff;
+    text-decoration: none;
+}
+
+footer table {
+    width     : 1200px;
+    text-align: center;
+}
+
+footer table th {
+    font-size  : 22px;
+    font-weight: normal;
+    text-align : center;
+    line-height: 40px;
+}
+
+footer table td {
+    font-size  : 16px;
+    line-height: 40px;
+}*/
+
+header {
+    width : 100%;
+    height: 200px;
+}
+
+header .logo-text {
+    width       : 49%;
+    height      : 100%;
+    padding-left: 3.4%;
+}
+
+header .logo-text h1 {
+    color         : #0093d6;
+    font-size     : 22px;
+    padding       : 40px 0 10px 0;
+    letter-spacing: 2px;
+}
+
+header .logo-text h6 {
+    font-size   : 14px;
+    color       : #a7dff9;
+    padding-left: 2px;
+}
+
+header .logo-text p {
+    font-size     : 34px;
+    margin-top    : 7px;
+    letter-spacing: 4px;
+}
+
+header .searchall {
+    width : 51%;
+    height: 100%;
+}
+
+header .searchall .qiehuan {
+    width     : 118px;
+    font-size : 18px;
+    margin-top: 3%;
+}
+
+header .searchall .qiehuan span {
+    color        : #999;
+    text-align   : center;
+    padding-right: 3%;
+}
+
+header .searchall .qiehuan .active {
+    color: #0093d6;
+}
+
+header .searchall .login {
+    margin-top  : 3%;
+    width       : 48px;
+    height      : 27px;
+    line-height : 25px;
+    text-align  : center;
+    border      : 1px solid #0093d6;
+    margin-right: 10px;
+    color       : #333;
+    font-size   : 16px;
+}
+
+header .searchall .register {
+    margin-top  : 3%;
+    width       : 48px;
+    height      : 27px;
+    line-height : 25px;
+    text-align  : center;
+    border      : 1px solid #0093d6;
+    margin-right: 10px;
+    color       : #0093d6;
+    font-size   : 16px;
+}
+
+header .searchall .pa {
+    width : 100%;
+    bottom: 20px;
+}
+
+header .searchall .search{
+    width   : 336px;
+    height  : 46px;
+    border  : 2px solid #0093d6;
+    position: relative;
+}
+header .searchall .search form {
+    height: 100%;
+}
+header .searchall .search button {
+    width     : 20%;
+    height    : 100%;
+    background: transparent;
+    display   : inline-block;
+}
+
+header .searchall .search input {
+    width  : 76%;
+    height : 100%;
+    display: inline-block;
+}
+
+nav {
+    width     : 100%;
+    height    : 40px;
+    background: #0093D6;
+}
+
+nav ul {
+    width: 100%;
+}
+
+nav ul li {
+    float      : left;
+    width      : 12.3%;
+    line-height: 40px;
+    text-align : center;
+    font-size  : 16px;
+}
+
+nav ul li a {
+    color: #fff;
+}
+
+nav ul li a: focus,
+nav ul li a: hover {
+    color          : #fff;
+    text-decoration: none;
+}
+
+nav ul .nav-hover a {
+    color: #00111E;
+}
+
+header a: focus,
+header a: hover {
+    /*color: #fff;*/
+    text-decoration: none;
+}
+
+a: focus,
+a: hover {
+    /*color: #fff;*/
+    text-decoration: none;
+}
+
+footer .foot_right .foot_tel p {
+    font-size: 26px!important;
+}
+
+#huangbiao{
+	background : rgb(255, 255, 255);
+	border     : 2px solid rgb(0, 147, 214);
+	width      : 336px;
+	margin-left: -2px;
+	margin-top : -2px;
+	text-indent: 70px;
+	z-index    : 9;
+	position   : absolute;
+	top        : 44px;
+}
+#huangbiao ul li{
+	height     : 23px;
+	line-height: 23px;
+}
+#huangbiao ul li:hover{
+	background: #0093d6;
+}

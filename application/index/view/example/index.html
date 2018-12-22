@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+  <!-- <meta name="full-screen" content="yes" /> -->
+  <!-- <meta name="x5-fullscreen" content="true" /> -->
+  <!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>国家材料环境腐蚀科学数据中心-{$currTitle}</title>
+  <link rel="stylesheet" href="__INDEX__/custom/css/bootstrap.min.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/reset.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/p.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/acm.css">
+  <style>
+    footer {
+      margin-top: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <header>{include file="common/header"}</header>
+    <nav>{include file="common/nav"}</nav>
+		<div class="width-1200" style="margin-top:50px">
+      {volist name="data" id="vo"}
+        <div id="pone{$vo.index}">
+          <div class="border-title clearfix">
+            <span></span>
+            <span>{$vo.name}</span>
+            <a href="/index/example/list?cid={$vo.cid}"><div class="sc-fr"><b>更多</b><img src="__INDEX__/custom/images/a7.png" alt=""></div></a>
+          </div>
+          {volist name="$vo.articles" id="article"}
+          <div class="box-new clearfix">
+            <div class="sc-fl left"><img src="{$article.cover}" alt=""></div>
+            <div class="sc-fl right">
+              <a href="/index/article/index?id={$article.id}">
+                <h5>{$article.title}</h5>
+                <p>{$article.content}<span>[详细]</span>
+                </p>
+              </a>
+            </div>
+          </div>
+          {/volist}
+
+          <div class="gray-div m25"></div>
+        </div>
+      {/volist}
+
+    </div>
+    <div class="px-aside">
+      <div class="platform-aside">
+        {volist name="data" id="vo"}
+        {if condition="$i==0"}
+        <a href="javascript:;" data-panel="{$vo.index}" class="current">{$vo.name}</a>
+        {else}
+        <a href="javascript:;" data-panel="{$vo.index}">{$vo.name}</a>
+        {/if}
+        {/volist}
+      </div>
+    </div>
+    <footer>{include file="common/footer"}</footer>
+  </div>
+  <script src="__INDEX__/custom/js/jquery.min.js"></script>
+  <script src="__INDEX__/custom/js/p.js"></script>
+  <script src="__INDEX__/custom/js/bootstrap.min.js"></script>
+  <script>
+    $(function () {
+      $('.qiehuan span').on('click', function () {
+        $(this).addClass('active').siblings().removeClass('active')
+      })
+      var mynav = $('nav li').find('a'); //寻找导航的a元素 　　
+      for (var i = 0; i < mynav.length; i++) {
+        var links = mynav[i].getAttribute('href'); //取出每个链接的href属性的值
+        var myurl = document.location.href; //取出当前窗口的链接
+        if (myurl.indexOf(links) != -1) { //判断浏览器地址是否等于当前a元素的href属性
+          $(mynav[i]).parent().addClass('nav-hover')
+        }
+      }
+      //描点定位
+      $('.platform-aside a').each(function (i) {
+        $('.platform-aside a').eq(i).on('click', function () {
+          $('html, body').animate({ scrollTop: $('#pone' + i).offset().top }, 500);
+          $(this).addClass('current').siblings().removeClass('current');
+        })
+      })
+
+    })
+  </script>
+</body>
+
+</html>

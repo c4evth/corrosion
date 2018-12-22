@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+  <!-- <meta name="full-screen" content="yes" /> -->
+  <!-- <meta name="x5-fullscreen" content="true" /> -->
+  <!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>国家材料环境腐蚀科学数据中心-{$currTitle}</title>
+  <link rel="stylesheet" href="__INDEX__/custom/css/bootstrap.min.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/reset.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/p.css">
+  <link rel="stylesheet" href="__INDEX__/custom/css/acm.css">
+  <link rel="stylesheet" href="__VENDOR__/layui/css/layui.css">
+  <style>
+    footer {
+      margin-top: 3%;
+    }
+	#real-table {
+		padding: 10px;
+		border: 2px solid #ccc;
+		border-radius: 5px;
+		overflow-x: scroll;
+	}
+	.Basicdata {
+		display: none;
+	}
+  #datas table {
+    width: 1184px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  #datas table tr{
+    height: 54px;
+    line-height: 54px;
+  }
+  #datas table td {
+    border: 2px solid #7d7d7d;
+    text-align: center;
+    font-size: 24px;
+    color: #7d7d7d;
+  }
+  #datas {
+    text-align: center;
+    padding-top: 20px;
+    height: auto;
+  }
+  #datas .data-img {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 10px;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <header>{include file="common/header"}</header>
+    <nav>{include file="common/nav"}</nav>
+    <div class="width-1200 clearfix">
+      <div class="Periodic-table-box pr">
+        <div id="datas" class="Periodic-table DataTable clearfix">
+            <h3>数据源{$data->id} ： {$data->search}</h3>
+              {if condition="$data.type==2"}
+              <img class="data-img" src="{$data.content}">
+              {else}
+                {$data.content}
+              {/if}
+            </div>
+      </div>
+    </div>
+    <footer>{include file="common/footer"}</footer>
+  </div>
+  <script src="__INDEX__/custom/js/jquery.min.js"></script>
+  <script src="__INDEX__/custom/js/p.js"></script>
+  <script src="__INDEX__/custom/js/bootstrap.min.js"></script>
+  <script src="__VENDOR__/layui/layui.js"></script>
+  <script>
+    $(function () {
+      var mynav = $('nav li').find('a'); //寻找导航的a元素 　　
+      for (var i = 0; i < mynav.length; i++) {
+        var links = mynav[i].getAttribute('href'); //取出每个链接的href属性的值
+        var myurl = document.location.href; //取出当前窗口的链接
+        if (myurl.indexOf(links) != -1) { //判断浏览器地址是否等于当前a元素的href属性
+          $(mynav[i]).parent().addClass('nav-hover')
+        }
+      }
+      $('.zhouqibiao').on('click', function () {
+        $('.Periodic-table').toggle()
+
+      })
+    })
+  </script>
+</body>
+
+</html>

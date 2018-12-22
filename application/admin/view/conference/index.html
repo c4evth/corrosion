@@ -1,0 +1,166 @@
+{include file='public/header'}
+
+
+<!-- 内容主体区域 -->
+<div class="layui-body">
+	<div style="padding: 15px;">
+		<h3>会议列表</h3><br>
+		<a href="/admin/Conference/add" class="layui-btn">添加会议</a>
+		<a href="/admin/conference/addbanner" class="layui-btn">添加图片</a>
+		<a href="/admin/organization/index" class="layui-btn">查看组织</a>
+		<a href="/admin/organization/addorg" class="layui-btn">添加组织</a>
+		<a href="/admin/organization/addCate" class="layui-btn">添加组织分类</a>
+		<a href="/admin/organization/cate" class="layui-btn">查看组织分类</a>
+		<a href="/admin/Conference/editText" class="layui-btn">完善会议内容</a>
+		<table class="layui-table">
+			<colgroup>
+				<col width="80">
+				<col>
+				<col width="120">
+				<col width="120">
+				<col width="120">
+				<col width="100">
+				<col width="120">
+				<col width="100">
+				<col width="220">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>标题</th>
+					<th>会议时间</th>
+					<th>会议主题</th>
+					<th>会议轮播图</th>
+					<th>往届图片</th>
+					<th>单位</th>
+					<th style="text-align:center">主办方logo</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				{volist name="ball" id="vo"}
+				<tr>
+					<td>{$vo.id}</td>
+					<td>{$vo.title}</td>
+					<td>
+						<a class="ThemeOrTime" id="{$vo.id}" href="javascript:;">{$vo.time}</a>
+						<span hidden>1</span>
+					</td>
+					<td><a class="ThemeOrTime" id="{$vo.id}" href="javascript:;">{$vo.theme}</a><span hidden>0</span></td>
+					<td>
+						<button class="layui-btn layui-btn-primary {eq name="vo.banner" value="0" }layui-btn-disabled{/eq} tupian" id="{$vo.id}"><i
+						 class="layui-icon"></i>图片列表</button>
+					</td>
+					<td>
+							<button class="layui-btn layui-btn-primary {eq name="vo.historypic" value="0" }layui-btn-disabled{/eq} historypic" id="{$vo.id}"><i
+								 class="layui-icon"></i>图片列表</button>
+					</td>
+					<td><a href="#">{$vo.host}</a></td>
+					<td style="text-align: center"><img width="50px" height="40px" src="{$vo.hostlogo}" alt=""></td>
+					<td>
+						<a href="/admin/conference/edit?id={$vo.id}" class="layui-btn layui-btn-warm layui-btn-mini">
+							<i class="layui-icon">&#xe642;</i>编辑</a>
+						<a href="/admin/conference/del?id={$vo.id}" class="layui-btn layui-btn-danger layui-btn-mini del">
+							<i class="layui-icon">&#xe640;</i>删除</a>
+					</td>
+				</tr>
+				{/volist}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<script>
+	layui.use('layer', function () {
+		var layer = layui.layer;
+		$(".del").on('click', function () {
+			var url = $(this).attr('href');
+			layer.confirm('确定要删除吗?', {
+				icon: 3,
+				title: '温馨提示'
+			}, function (index) {
+				$.ajax({
+					type: "get",
+					url: url,
+					dataType: "json",
+					success:function(data){
+						if (data.status == 0) {
+							layer.msg(data.msg);
+
+						} else {
+							layer.msg(data.msg);
+							location.reload();
+						}
+					}
+				})
+			});
+			return false;
+		});
+
+		// 图片点击事件
+		$(".tupian").on('click', function (e) {
+			//iframe层-父子操作
+			var id = $(this).attr("id");
+			if ($(this).hasClass("layui-btn-disabled")) {  //  有layui-btn-disabled这个类的话说明没有图片，所以不能有点击事件
+				return false;
+			}
+			layer.open({
+				type: 2,
+				title: '轮播图片',
+				area: ['700px', '450px'],
+				fixed: false, //不固定
+				maxmin: true,
+				content: '{:url("admin/conference/pics")}?id=' + id + '&type=0',
+			});
+			// 这里点击按钮默认是会自动跳转回来当前页面的，所以用preventDefault()阻止默认事件
+			e.preventDefault(); // 阻止默认事件，
+			// return false;
+		})
+
+		// 图片点击事件
+		$(".historypic").on('click', function (e) {
+			//iframe层-父子操作
+			var id = $(this).attr("id");
+			if ($(this).hasClass("layui-btn-disabled")) {  //  有layui-btn-disabled这个类的话说明没有图片，所以不能有点击事件
+				return false;
+			}
+			layer.open({
+				type: 2,
+				title: '往届图片',
+				area: ['700px', '450px'],
+				fixed: false, //不固定
+				maxmin: true,
+				content: '{:url("admin/conference/pics")}?id=' + id + '&type=1',
+			});
+			// 这里点击按钮默认是会自动跳转回来当前页面的，所以用preventDefault()阻止默认事件
+			e.preventDefault(); // 阻止默认事件，
+			// return false;
+		})
+
+		// 主题点击事件
+		$(".ThemeOrTime").on('click', function (e) {
+			//iframe层-父子操作
+			var id = $(this).attr("id");
+			var type = $(this).siblings("span").text();
+			var title = "";
+			if(type == 0) title = "会议主题";
+			else title = "时间节点";
+			if ($(this).hasClass("layui-btn-disabled")) {
+				return false;
+			}
+			layer.open({
+				type: 2,
+				title: title,
+				area: ['700px', '450px'],
+				fixed: false, //不固定
+				maxmin: true,
+				content: '{:url("admin/conference/themeOrTime")}?id=' + id + '&type=' + type,
+			});
+			// 这里点击按钮默认是会自动跳转回来当前页面的，所以用preventDefault()阻止默认事件
+			e.preventDefault(); // 阻止默认事件，
+			// return false;
+		})
+	});
+</script>
+
+{include file="public/footer">

@@ -1,0 +1,13 @@
+<div class="width-1200">
+    {$footer.content}
+    <div class="link clearfix">
+        友情连接：&nbsp;&nbsp;
+        <div class="sc-fr">
+            {volist name="friends" id="vo"}
+            <a target="_blank" href="{$vo.linkto}">{$vo.name}</a>
+            {/volist}
+            <br>
+            <br>
+        </div>
+    </div>
+</div>

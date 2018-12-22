@@ -1,0 +1,9 @@
+<div class="width-1200" style="height:30px;">
+    <ul class="clearfix">
+        <li><a href="{:url('index/index')}">首页</a></li>
+        {volist name="nav" id="vo" offset="0" length="7"}
+        <img src=" __INDEX__/custom/images/a2.png" alt="" class="sc-fl" style="margin-top: 1.1%;">
+        <li><a href="{$vo.linkto}">{$vo.name}</a></li>
+        {/volist}
+    </ul>
+</div>

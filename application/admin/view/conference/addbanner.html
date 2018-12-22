@@ -1,0 +1,119 @@
+{include file="public/header"}
+<!-- 内容主体区域 -->
+<div class="layui-body">
+	<div style="padding: 15px;">
+		<div class="layui-tab">
+			<ul class="layui-tab-title">
+				<li class="layui-this">轮播图</li>
+				<li><a href="/admin/Conference/addpic">往届图片</a></li>
+			</ul>
+
+			<div class="layui-tab-item layui-show">
+				<form style="margin-top:50px;" class="layui-form" action="?" method="post">
+					<div class="layui-form-item">
+						<label class="layui-form-label">选择会议</label>
+						<div class="layui-input-block">
+							<select name="ballid" lay-verify="required">
+								<option value=""></option>
+								{volist name="AllBall" id="vo"}
+								<option value="{$vo.id}">{$vo.title}</option>
+								{/volist}
+							</select>
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">轮播图</label>
+						<div class="layui-input-block">
+							<input type="file" id="image-input" autocomplete="off" class="layui-input">
+							<input type="text" id="image-path" style="display: none" name="banner">
+							<img id="newPic" width="50px" height="50px" hidden src="#" alt="">
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<div class="layui-input-block">
+							<button id="submit" class="layui-btn" lay-submit lay-filter="formDemo">增加</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="layui-tab-item">
+				ipso
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="__LAYUI__/layui.js"></script>
+<script src="__JQUERY__/jquery-3.0.0.js"></script>
+<script src="/static/vendor/wangeditor/wangEditor.js"></script>
+<script type="text/javascript">
+	$(".editor-content").hide()
+	var E = window.wangEditor
+	var editor = new E('.editor')
+	var $text1 = $('.content')
+	editor.customConfig.onchange = function (html) {
+		// 监控变化，同步更新到 textarea
+		$text1.val(html)
+	}
+	editor.create()
+	// 初始化 textarea 的值
+	$text1.val(editor.txt.html())
+
+	layui.use('form', function () {
+		var form = layui.form;
+	});
+
+	layui.use(["layer"], function () {
+		var layer = layui.layer;
+		$("#NewsID").blur(function () {
+			let data = $(this).val();
+			let url = "/admin/conference/isExistNews";
+			// alert(url);
+			// alert(data);
+			$.ajax({
+				type: "post",
+				data: { "data": data },
+				url: url,
+				success: function (data) {
+					if (data.status == 0) {
+						layer.alert(data.msg, { icon: 5 });
+						$("#submit").attr("disabled", true);
+					} else {
+						layer.msg(data.msg);
+						$("#submit").attr("disabled", false);
+					}
+				}
+			})
+		})
+	})
+
+	$(document).ready(e => {
+		$("#image-input").change(e => {
+			let file = document.getElementById("image-input")
+			let data = new FormData()
+			data.append('image', file.files[0])
+			$.ajax({
+				url: '/common/upload/go',
+				data: data,
+				processData: false,
+				contentType: false,
+				async: false,
+				method: 'post',
+				success: res => {
+					res = JSON.parse(res)
+					console.log(res)
+					if (res.status) {
+						$("#image-path").val(res.url)
+						$("#newPic").attr('src', res.url)
+						$("#newPic").show();
+					}
+				}
+			})
+		})
+	})
+</script>
+
+{include file="public/footer"}

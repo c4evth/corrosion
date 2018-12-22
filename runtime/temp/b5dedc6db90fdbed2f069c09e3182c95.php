@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:85:"/Users/iimt/Development/PHP/corrosion/public/../application/admin/view/bdata/add.html";i:1541601564;s:79:"/Users/iimt/Development/PHP/corrosion/application/admin/view/public/header.html";i:1542238450;s:79:"/Users/iimt/Development/PHP/corrosion/application/admin/view/public/footer.html";i:1541774124;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:85:"/Users/iimt/Development/PHP/corrosion/public/../application/admin/view/bdata/add.html";i:1541601566;s:79:"/Users/iimt/Development/PHP/corrosion/application/admin/view/public/header.html";i:1545466808;s:79:"/Users/iimt/Development/PHP/corrosion/application/admin/view/public/footer.html";i:1541774126;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -10,7 +10,9 @@
   <link rel="stylesheet" href="/static/admin/css/font-awesome.min.css">
   <script src="/static/admin/js/jquery.min.js"></script>
   <script src="/vendor/layui/layui.js"></script>
+  <script src="/static/vendor/wangeditor/wangEditor.js"></script>
   <script src="/static/admin/custom/js/router.js"></script>
+  <script src="/static/admin/custom/js/editor.js"></script>
   <script>
     $(document).ready(e => {
       resetNav()
@@ -185,7 +187,20 @@
               <dd data-url='/standard/add'><a>添加标准</a></dd>
               <dd data-url='/standard/import'><a>导入标准</a></dd>
             </dl>
-          </li>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;" class="nav-one">会议管理</a>
+						<dl class="layui-nav-child">
+							<dd data-url='/conference/index'><a>会议列表</a></dd>
+							<dd data-url='/conference/add'><a>添加会议</a></dd>
+							<dd data-url='/conference/addbanner'><a>添加图片</a></dd>
+							<dd data-url='/organization/index'><a>会议涉及组织</a></dd>
+							<dd data-url='/organization/addorg'><a>添加会议组织</a></dd>
+							<dd data-url='/organization/cate'><a>会议组织分类</a></dd>
+							<dd data-url='/organization/addCate'><a>添加组织分类</a></dd>
+							<dd data-url='/enlist/index'><a>报名中心</a></dd>
+						</dl>
+					</li>
           <li class="layui-nav-item">
             <a href="javascript:;" class="nav-one">平台简介管理</a>
             <dl class="layui-nav-child">

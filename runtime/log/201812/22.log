@@ -25041,3 +25041,1477 @@ div.Section0{page:Section0;}</style>',
   '/uploads/20181128/f791e5553bc680632aaf126fdf376fa6_jpg' => '',
 )
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:20:21+08:00 ] 127.0.0.1 GET www.corrosion.com/admin
+[运行时间：0.040097s] [吞吐率：24.94req/s] [内存消耗：1,685.98kb] [文件加载：42]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'purpose' => 'prefetch',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Index.php ]
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/index/index.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:20:22+08:00 ] 127.0.0.1 GET www.corrosion.com/admin
+[运行时间：0.019734s] [吞吐率：50.67req/s] [内存消耗：1,540.89kb] [文件加载：40]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Index.php ]
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/index/index.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:20:25+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/messager/index
+[运行时间：0.643692s] [吞吐率：1.55req/s] [内存消耗：2,552.29kb] [文件加载：49]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'messager',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/messager/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Messager->index[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Messager.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/messager/index.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+  2 => 'MessagerList',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.405894s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.099759s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` [ RunTime:0.099843s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:20:32+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/messager/index
+[运行时间：0.340482s] [吞吐率：2.94req/s] [内存消耗：2,406.35kb] [文件加载：47]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'messager',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/messager/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Messager->index[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Messager.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/messager/index.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+  2 => 'MessagerList',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.131806s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.094199s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` [ RunTime:0.088084s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:20:39+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/messager/add
+[运行时间：0.023928s] [吞吐率：41.79req/s] [内存消耗：1,702.41kb] [文件加载：42]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'messager',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/messager/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/messager/add' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Messager->add[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Messager.php ]
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/messager/add.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:20:43+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/userinfo/index
+[运行时间：0.343551s] [吞吐率：2.91req/s] [内存消耗：2,561.48kb] [文件加载：49]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'userinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/messager/add',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/userinfo/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Userinfo->index[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Userinfo.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/userinfo/index.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+  2 => 'Userinfo',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.137056s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.092836s ]
+[ sql ] [ SQL ] SELECT * FROM `user` [ RunTime:0.089243s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:20:47+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/article/index
+[运行时间：0.610054s] [吞吐率：1.64req/s] [内存消耗：3,091.76kb] [文件加载：51]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/userinfo/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->index[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/article/index.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+  2 => 'articles',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.122499s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.081693s ]
+[ sql ] [ SQL ] SELECT * FROM `article` ORDER BY `id` DESC [ RunTime:0.371557s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:20:47+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181128/f791e5553bc680632aaf126fdf376fa6.jpg
+[运行时间：0.018339s] [吞吐率：54.53req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181128',
+    2 => 'f791e5553bc680632aaf126fdf376fa6.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/article/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181128/f791e5553bc680632aaf126fdf376fa6_jpg' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:20:47+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181122/b0cf5ee3595d9ebc98a30cd7f6a78dbd.png
+[运行时间：0.023582s] [吞吐率：42.41req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181122',
+    2 => 'b0cf5ee3595d9ebc98a30cd7f6a78dbd.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/article/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181122/b0cf5ee3595d9ebc98a30cd7f6a78dbd_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:20:47+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181115/ebce06b8e8453e0e6c47d274c668f3a1.png
+[运行时间：0.013500s] [吞吐率：74.07req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181115',
+    2 => 'ebce06b8e8453e0e6c47d274c668f3a1.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/article/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181115/ebce06b8e8453e0e6c47d274c668f3a1_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:20:47+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181115/3e4382a50f92219765d9ee61df95ddb0.png
+[运行时间：0.015509s] [吞吐率：64.48req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181115',
+    2 => '3e4382a50f92219765d9ee61df95ddb0.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/article/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181115/3e4382a50f92219765d9ee61df95ddb0_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:20:47+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181108/c0c54fc11eaba6df49eaddb98b81d7aa.png
+[运行时间：0.015010s] [吞吐率：66.62req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181108',
+    2 => 'c0c54fc11eaba6df49eaddb98b81d7aa.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/article/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181108/c0c54fc11eaba6df49eaddb98b81d7aa_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:20:47+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181108/ae5d255b1367b7fb0ccfda51baa1e179.png
+[运行时间：0.018410s] [吞吐率：54.32req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181108',
+    2 => 'ae5d255b1367b7fb0ccfda51baa1e179.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/article/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181108/ae5d255b1367b7fb0ccfda51baa1e179_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:20:47+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181108/06edddf739ef787fa694a62b6e0923a9.png
+[运行时间：0.017006s] [吞吐率：58.80req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181108',
+    2 => '06edddf739ef787fa694a62b6e0923a9.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/article/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181108/06edddf739ef787fa694a62b6e0923a9_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:20:47+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181108/514224c65e517f3fecf2c4fc4ca96b03.png
+[运行时间：0.017914s] [吞吐率：55.82req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181108',
+    2 => '514224c65e517f3fecf2c4fc4ca96b03.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/article/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181108/514224c65e517f3fecf2c4fc4ca96b03_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:20:47+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181107/ea9f56675a26917ebe5aaf9dbfbadbe7.png
+[运行时间：0.021384s] [吞吐率：46.76req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181107',
+    2 => 'ea9f56675a26917ebe5aaf9dbfbadbe7.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/article/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181107/ea9f56675a26917ebe5aaf9dbfbadbe7_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:20:47+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181107/688080b672fb5e5b7cee5ab0b027080b.jpg
+[运行时间：0.024469s] [吞吐率：40.87req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181107',
+    2 => '688080b672fb5e5b7cee5ab0b027080b.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/article/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181107/688080b672fb5e5b7cee5ab0b027080b_jpg' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:20:47+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181108/0723c4d3c7a423de059d0db5ff88a1ce.png
+[运行时间：0.023197s] [吞吐率：43.11req/s] [内存消耗：1,197.63kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181108',
+    2 => '0723c4d3c7a423de059d0db5ff88a1ce.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/article/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181108/0723c4d3c7a423de059d0db5ff88a1ce_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:20:49+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/article/edit?id=23
+[运行时间：0.620708s] [吞吐率：1.61req/s] [内存消耗：2,855.76kb] [文件加载：52]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/article/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article/edit' => '',
+  'id' => '23',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->edit[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/article/edit.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+  2 => 'acates',
+  3 => 'article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.177693s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.101698s ]
+[ sql ] [ SQL ] SELECT * FROM `article` WHERE  `id` = 23 LIMIT 1 [ RunTime:0.100978s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `acate` [ RunTime:0.098961s ]
+[ sql ] [ SQL ] SELECT * FROM `acate` [ RunTime:0.104382s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:20:49+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181128/f791e5553bc680632aaf126fdf376fa6.jpg
+[运行时间：0.015202s] [吞吐率：65.78req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181128',
+    2 => 'f791e5553bc680632aaf126fdf376fa6.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/article/edit?id=23',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181128/f791e5553bc680632aaf126fdf376fa6_jpg' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:20:53+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/article/add
+[运行时间：0.303734s] [吞吐率：3.29req/s] [内存消耗：2,842.48kb] [文件加载：52]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/article/edit?id=23',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article/add' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->add[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/article/add.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+  2 => 'acates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.115130s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `acate` [ RunTime:0.077547s ]
+[ sql ] [ SQL ] SELECT * FROM `acate` [ RunTime:0.080238s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:20:58+08:00 ] 127.0.0.1 POST www.corrosion.com/common/upload/go
+[运行时间：0.014894s] [吞吐率：67.14req/s] [内存消耗：1,510.91kb] [文件加载：35]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'common',
+    1 => 'upload',
+    2 => 'go',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'content-length' => '63609',
+  'origin' => 'http://www.corrosion.com',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryQgeYQjncP7IAgWtv',
+  'accept' => '*/*',
+  'referer' => 'http://www.corrosion.com/admin/article/add',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/common/upload/go' => '',
+)
+[ info ] [ RUN ] app\common\controller\Upload->go[ /Users/iimt/Development/PHP/corrosion/application/common/controller/Upload.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:21:00+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/focus/index
+[运行时间：0.301444s] [吞吐率：3.32req/s] [内存消耗：2,791.60kb] [文件加载：51]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'focus',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/article/add',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/focus/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Focus->index[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Focus.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/focus/index.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+  2 => 'articles',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.118871s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `focus` [ RunTime:0.078431s ]
+[ sql ] [ SQL ] SELECT `f`.*,`a`.`title` FROM `focus` `f` INNER JOIN `article` `a` ON `f`.`aid`=`a`.`id` ORDER BY `id` DESC [ RunTime:0.077104s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:21:03+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/bdcate/index
+[运行时间：0.379660s] [吞吐率：2.63req/s] [内存消耗：2,823.96kb] [文件加载：51]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'bdcate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/focus/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/bdcate/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Bdcate->index[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Bdcate.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/bdcate/index.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+  2 => 'cate',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.149671s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bdcate` [ RunTime:0.100745s ]
+[ sql ] [ SQL ] SELECT * FROM `bdcate` ORDER BY `id` ASC [ RunTime:0.098772s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:21:03+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181108/881881a10e211c12fdbd33d24916410a.png
+[运行时间：0.019331s] [吞吐率：51.73req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181108',
+    2 => '881881a10e211c12fdbd33d24916410a.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/bdcate/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181108/881881a10e211c12fdbd33d24916410a_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:21:03+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181108/1fe7b34f9e825b8c8609e3a781958f44.png
+[运行时间：0.025980s] [吞吐率：38.49req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181108',
+    2 => '1fe7b34f9e825b8c8609e3a781958f44.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/bdcate/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181108/1fe7b34f9e825b8c8609e3a781958f44_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:21:03+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181108/059d2051be223dc7c27a6bd253fca100.png
+[运行时间：0.017605s] [吞吐率：56.80req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181108',
+    2 => '059d2051be223dc7c27a6bd253fca100.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/bdcate/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181108/059d2051be223dc7c27a6bd253fca100_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:21:03+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181108/165d567372b3caba724395292f1d94fa.png
+[运行时间：0.017631s] [吞吐率：56.72req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181108',
+    2 => '165d567372b3caba724395292f1d94fa.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/bdcate/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181108/165d567372b3caba724395292f1d94fa_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:21:03+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181108/6df04a129beaa3dcc5b8a442973a1d68.png
+[运行时间：0.012292s] [吞吐率：81.35req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181108',
+    2 => '6df04a129beaa3dcc5b8a442973a1d68.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/bdcate/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181108/6df04a129beaa3dcc5b8a442973a1d68_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:21:03+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181108/3d336d1ca8caddfa929b4241b6efaa25.png
+[运行时间：0.012291s] [吞吐率：81.36req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181108',
+    2 => '3d336d1ca8caddfa929b4241b6efaa25.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/bdcate/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181108/3d336d1ca8caddfa929b4241b6efaa25_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:21:03+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181108/05fbb0c996a6afbf4898a40085b23dda.png
+[运行时间：0.010868s] [吞吐率：92.01req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181108',
+    2 => '05fbb0c996a6afbf4898a40085b23dda.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/bdcate/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181108/05fbb0c996a6afbf4898a40085b23dda_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:21:03+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181108/1659ab912db5249aae2c3cc099aaf023.png
+[运行时间：0.011817s] [吞吐率：84.62req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181108',
+    2 => '1659ab912db5249aae2c3cc099aaf023.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/bdcate/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181108/1659ab912db5249aae2c3cc099aaf023_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:21:03+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181108/e4516b6b314c92d65561b0e2763252db.png
+[运行时间：0.018058s] [吞吐率：55.38req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181108',
+    2 => 'e4516b6b314c92d65561b0e2763252db.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/bdcate/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181108/e4516b6b314c92d65561b0e2763252db_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:21:05+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/bdcate/edit?id=4
+[运行时间：0.304428s] [吞吐率：3.28req/s] [内存消耗：2,799.86kb] [文件加载：51]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'bdcate',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/bdcate/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/bdcate/edit' => '',
+  'id' => '4',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Bdcate->edit[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Bdcate.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/bdcate/edit.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+  2 => 'cate',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.119637s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bdcate` [ RunTime:0.077968s ]
+[ sql ] [ SQL ] SELECT * FROM `bdcate` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.077874s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:21:05+08:00 ] 127.0.0.1 GET www.corrosion.com/uploads/20181108/881881a10e211c12fdbd33d24916410a.png
+[运行时间：0.012840s] [吞吐率：77.88req/s] [内存消耗：1,197.04kb] [文件加载：30]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181108',
+    2 => '881881a10e211c12fdbd33d24916410a.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/bdcate/edit?id=4',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181108/881881a10e211c12fdbd33d24916410a_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:21:07+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/bdcate/index
+[运行时间：0.368741s] [吞吐率：2.71req/s] [内存消耗：2,669.84kb] [文件加载：49]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'bdcate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/focus/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/bdcate/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Bdcate->index[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Bdcate.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/bdcate/index.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+  2 => 'cate',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.149324s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bdcate` [ RunTime:0.099231s ]
+[ sql ] [ SQL ] SELECT * FROM `bdcate` ORDER BY `id` ASC [ RunTime:0.098920s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:21:10+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/bdata/index
+[运行时间：0.311131s] [吞吐率：3.21req/s] [内存消耗：2,828.46kb] [文件加载：51]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'bdata',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/bdcate/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/bdata/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Bdata->index[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Bdata.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/bdata/index.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+  2 => 'bdata',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.118900s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bdata` [ RunTime:0.080748s ]
+[ sql ] [ SQL ] SELECT `bd`.*,bdc.name as catename FROM `bdata` `bd` INNER JOIN `bdcate` `bdc` ON `bd`.`cid`=`bdc`.`id` ORDER BY `id` DESC [ RunTime:0.084766s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:21:12+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/bdata/add
+[运行时间：0.557728s] [吞吐率：1.79req/s] [内存消耗：2,824.78kb] [文件加载：52]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'bdata',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/bdata/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/bdata/add' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Bdata->add[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Bdata.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/bdata/add.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+  2 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.125531s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bdcate` [ RunTime:0.080103s ]
+[ sql ] [ SQL ] SELECT * FROM `bdcate` ORDER BY `id` ASC [ RunTime:0.322609s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:21:17+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/indoordata/index
+[运行时间：0.310985s] [吞吐率：3.22req/s] [内存消耗：2,805.27kb] [文件加载：51]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'indoordata',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/bdata/add',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/indoordata/index' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Indoordata->index[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Indoordata.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/indoordata/index.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+  2 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.119291s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `indoordata` [ RunTime:0.081069s ]
+[ sql ] [ SQL ] SELECT `i`.*,d.name as catename FROM `indoordata` `i` INNER JOIN `dcate` `d` ON `d`.`id`=`i`.`cid` [ RunTime:0.084845s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:21:20+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/data/index?cid=1&type=1
+[运行时间：0.479262s] [吞吐率：2.09req/s] [内存消耗：2,851.02kb] [文件加载：52]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'data',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/indoordata/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/data/index' => '',
+  'cid' => '1',
+  'type' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Data->index[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Data.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/data/index.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+  2 => 'parentData',
+  3 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.120664s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `data` [ RunTime:0.083175s ]
+[ sql ] [ SQL ] SELECT * FROM `data` WHERE  `cid` = 1  AND `type` = 1 [ RunTime:0.083605s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `indoordata` [ RunTime:0.080148s ]
+[ sql ] [ SQL ] SELECT * FROM `indoordata` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.080307s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:21:21+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/data/edit?id=1
+[运行时间：0.543185s] [吞吐率：1.84req/s] [内存消耗：2,873.91kb] [文件加载：52]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'data',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/data/index?cid=1&type=1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/data/edit' => '',
+  'id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Data->edit[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Data.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/data/edit.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+  2 => 'icates',
+  3 => 'wcates',
+  4 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.117249s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dcate` [ RunTime:0.082652s ]
+[ sql ] [ SQL ] SELECT * FROM `dcate` WHERE  `type` = 1  AND `level` = 2 [ RunTime:0.078704s ]
+[ sql ] [ SQL ] SELECT * FROM `dcate` WHERE  `type` = 2  AND `level` = 2 [ RunTime:0.079778s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `data` [ RunTime:0.077674s ]
+[ sql ] [ SQL ] SELECT * FROM `data` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.078186s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:21:27+08:00 ] 127.0.0.1 POST www.corrosion.com/common/upload/go
+[运行时间：0.018874s] [吞吐率：52.98req/s] [内存消耗：1,510.91kb] [文件加载：35]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'common',
+    1 => 'upload',
+    2 => 'go',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'content-length' => '63609',
+  'origin' => 'http://www.corrosion.com',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarykmQ1XobEwr7m3C16',
+  'accept' => '*/*',
+  'referer' => 'http://www.corrosion.com/admin/data/edit?id=1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/common/upload/go' => '',
+)
+[ info ] [ RUN ] app\common\controller\Upload->go[ /Users/iimt/Development/PHP/corrosion/application/common/controller/Upload.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:21:29+08:00 ] 127.0.0.1 GET www.corrosion.com/admin/scate/add
+[运行时间：0.337803s] [吞吐率：2.96req/s] [内存消耗：2,803.97kb] [文件加载：51]
+[ info ] [ LANG ] /Users/iimt/Development/PHP/corrosion/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scate',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.corrosion.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.corrosion.com/admin/data/edit?id=1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'PHPSESSID=8afc04f9059e34365bc38b135f68760b',
+)
+[ info ] [ PARAM ] array (
+  '/admin/scate/add' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Scate->add[ /Users/iimt/Development/PHP/corrosion/application/admin/controller/Scate.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/iimt/Development/PHP/corrosion/public/../application/admin/view/scate/add.html [ array (
+  0 => 'currMessager',
+  1 => 'pageTitle',
+  2 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.143586s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `scate` [ RunTime:0.081115s ]
+[ sql ] [ SQL ] SELECT * FROM `scate` WHERE  `level` = 1 [ RunTime:0.080599s ]

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:87:"/Users/iimt/Development/PHP/corrosion/public/../application/admin/view/bdata/index.html";i:1541667136;s:79:"/Users/iimt/Development/PHP/corrosion/application/admin/view/public/header.html";i:1544172502;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:87:"/Users/iimt/Development/PHP/corrosion/public/../application/admin/view/bdata/index.html";i:1541667136;s:79:"/Users/iimt/Development/PHP/corrosion/application/admin/view/public/header.html";i:1545466808;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -10,7 +10,9 @@
   <link rel="stylesheet" href="/static/admin/css/font-awesome.min.css">
   <script src="/static/admin/js/jquery.min.js"></script>
   <script src="/vendor/layui/layui.js"></script>
+  <script src="/static/vendor/wangeditor/wangEditor.js"></script>
   <script src="/static/admin/custom/js/router.js"></script>
+  <script src="/static/admin/custom/js/editor.js"></script>
   <script>
     $(document).ready(e => {
       resetNav()

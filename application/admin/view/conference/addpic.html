@@ -40,7 +40,7 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">往届回顾</label>
 						<div class="layui-input-block">
-							<div id="editor" class="editor">
+							<div id="editor">
 							</div>
 							<textarea name="history" class="editor-content content" required lay-verify="required"></textarea>
 						</div>
@@ -65,18 +65,7 @@
 <script src="__JQUERY__/jquery-3.0.0.js"></script>
 <script src="/static/vendor/wangeditor/wangEditor.js"></script>
 <script type="text/javascript">
-	$(".editor-content").hide()
-	var E = window.wangEditor
-	var editor = new E('.editor')
-	var $text1 = $('.content')
-	editor.customConfig.onchange = function (html) {
-		// 监控变化，同步更新到 textarea
-		$text1.val(html)
-	}
-	editor.create()
-	// 初始化 textarea 的值
-	$text1.val(editor.txt.html())
-
+	setEditor()
 	layui.use('form', function () {
 		var form = layui.form;
 	});

@@ -26515,3 +26515,876 @@ div.Section0{page:Section0;}</style>',
 [ sql ] [ DB ] CONNECT:[ UseTime:0.143586s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
 [ sql ] [ SQL ] SHOW COLUMNS FROM `scate` [ RunTime:0.081115s ]
 [ sql ] [ SQL ] SELECT * FROM `scate` WHERE  `level` = 1 [ RunTime:0.080599s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:50:24+08:00 ] 127.0.0.1 GET www.ipso.me:8080/
+[运行时间：3.156816s] [吞吐率：0.32req/s] [内存消耗：3,085.57kb] [文件加载：59]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\xampp\xampp\htdocs\corrosion\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\xampp\xampp\htdocs\corrosion\public/../application/index\view\index\index.html [ array (
+  0 => 'nav',
+  1 => 'friends',
+  2 => 'site',
+  3 => 'footer',
+  4 => 'currTitle',
+  5 => 'banner',
+  6 => 'focus',
+  7 => 'select',
+  8 => 'news',
+  9 => 'dataPro',
+  10 => 'dataActivity',
+  11 => 'selected',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.293352s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `nav` [ RunTime:0.134937s ]
+[ sql ] [ SQL ] SELECT * FROM `nav` ORDER BY `priority` DESC [ RunTime:0.128002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `friends` [ RunTime:0.117158s ]
+[ sql ] [ SQL ] SELECT * FROM `friends` [ RunTime:0.152878s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `site` [ RunTime:0.169533s ]
+[ sql ] [ SQL ] SELECT * FROM `site` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.139981s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `footer` [ RunTime:0.156476s ]
+[ sql ] [ SQL ] SELECT * FROM `footer` LIMIT 1 [ RunTime:0.127295s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `carousel` [ RunTime:0.116391s ]
+[ sql ] [ SQL ] SELECT * FROM `carousel` [ RunTime:0.139619s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `focus` [ RunTime:0.135581s ]
+[ sql ] [ SQL ] SELECT `f`.*,`a`.`title` FROM `focus` `f` INNER JOIN `article` `a` ON `f`.`aid`=`a`.`id` ORDER BY `id` DESC [ RunTime:0.111021s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `select` [ RunTime:0.144122s ]
+[ sql ] [ SQL ] SELECT `s`.*,`a`.`title` FROM `select` `s` INNER JOIN `article` `a` ON `s`.`aid`=`a`.`id` ORDER BY `id` DESC [ RunTime:0.123842s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.110195s ]
+[ sql ] [ SQL ] SELECT * FROM `article` ORDER BY `id` DESC LIMIT 5 [ RunTime:0.360326s ]
+[ sql ] [ SQL ] SELECT `id`,`cover`,`title` FROM `article` WHERE  `cid` = 6 ORDER BY `id` DESC LIMIT 5 [ RunTime:0.139149s ]
+[ sql ] [ SQL ] SELECT `id`,`cover`,`title`,`content` FROM `article` WHERE  `cid` = 9 ORDER BY `id` DESC LIMIT 2 [ RunTime:0.140840s ]
+[ sql ] [ SQL ] SELECT `s`.*,`a`.`title`,`a`.`content`,`a`.`cover` FROM `select` `s` INNER JOIN `article` `a` ON `s`.`aid`=`a`.`id` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.152756s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:50:25+08:00 ] 127.0.0.1 GET www.ipso.me:8080/uploads/20181203/36375e2252ff760d8e740e31bafde24f.jpg
+[运行时间：0.035421s] [吞吐率：28.23req/s] [内存消耗：1,188.58kb] [文件加载：30]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181203',
+    2 => '36375e2252ff760d8e740e31bafde24f.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.ipso.me:8080/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181203/36375e2252ff760d8e740e31bafde24f_jpg' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:50:25+08:00 ] 127.0.0.1 GET www.ipso.me:8080/uploads/20181107/ea9f56675a26917ebe5aaf9dbfbadbe7.png
+[运行时间：0.021032s] [吞吐率：47.55req/s] [内存消耗：1,189.33kb] [文件加载：30]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181107',
+    2 => 'ea9f56675a26917ebe5aaf9dbfbadbe7.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.ipso.me:8080/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+  'if-none-match' => '"28b7d-57a0de93ff680"',
+  'if-modified-since' => 'Wed, 07 Nov 2018 07:17:30 GMT',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181107/ea9f56675a26917ebe5aaf9dbfbadbe7_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:50:25+08:00 ] 127.0.0.1 GET www.ipso.me:8080/images/dian.png
+[运行时间：0.017144s] [吞吐率：58.33req/s] [内存消耗：1,188.37kb] [文件加载：30]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'images',
+    1 => 'dian.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.ipso.me:8080/static/index/custom/css/acm.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+  '/images/dian_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:50:35+08:00 ] 127.0.0.1 GET www.ipso.me:8080/index/Conference/index
+[运行时间：5.532309s] [吞吐率：0.18req/s] [内存消耗：2,959.58kb] [文件加载：59]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Conference',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ipso.me:8080/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+  '/index/Conference/index' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Conference->index[ E:\xampp\xampp\htdocs\corrosion\application\index\controller\Conference.php ]
+[ info ] [ VIEW ] E:\xampp\xampp\htdocs\corrosion\public/../application/index\view\conference\index.html [ array (
+  0 => 'nav',
+  1 => 'friends',
+  2 => 'site',
+  3 => 'footer',
+  4 => 'currTitle',
+  5 => 'base',
+  6 => 'pic',
+  7 => 'Org',
+  8 => 'currID',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.908647s ] mysql:host=www.iimt.me;dbname=corrosion;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `nav` [ RunTime:0.125631s ]
+[ sql ] [ SQL ] SELECT * FROM `nav` ORDER BY `priority` DESC [ RunTime:0.142869s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `friends` [ RunTime:0.148963s ]
+[ sql ] [ SQL ] SELECT * FROM `friends` [ RunTime:0.119823s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `site` [ RunTime:0.146247s ]
+[ sql ] [ SQL ] SELECT * FROM `site` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.145183s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `footer` [ RunTime:0.618321s ]
+[ sql ] [ SQL ] SELECT * FROM `footer` LIMIT 1 [ RunTime:0.150159s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `conference` [ RunTime:0.147156s ]
+[ sql ] [ SQL ] SELECT `id` FROM `conference` ORDER BY `id` ASC [ RunTime:0.156674s ]
+[ sql ] [ SQL ] SELECT `id`,`newsid`,`waittime`,`theme`,`spot`,`host`,`title`,`hostlogo` FROM `conference` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.154870s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `article` [ RunTime:0.167428s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `article` WHERE  `id` IN (25,23,3) [ RunTime:0.163306s ]
+[ sql ] [ SQL ] SELECT `id`,`banner`,`history`,`historypic` FROM `conference` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.142529s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orgcate` [ RunTime:0.153161s ]
+[ sql ] [ SQL ] SELECT * FROM `orgcate` WHERE  `remark` = 'media' LIMIT 1 [ RunTime:0.142448s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `organization` [ RunTime:0.146931s ]
+[ sql ] [ SQL ] SELECT * FROM `organization` WHERE  `cid` = 10  AND `ballid` = 10 [ RunTime:0.144056s ]
+[ sql ] [ SQL ] SELECT * FROM `orgcate` [ RunTime:0.142299s ]
+[ sql ] [ SQL ] SELECT * FROM `organization` WHERE  `cid` = 2  AND `ballid` = 10 [ RunTime:0.144037s ]
+[ sql ] [ SQL ] SELECT * FROM `organization` WHERE  `cid` = 3  AND `ballid` = 10 [ RunTime:0.163683s ]
+---------------------------------------------------------------
+[ 2018-12-22T16:50:35+08:00 ] 127.0.0.1 GET www.ipso.me:8080/uploads/20181218/6bd3398a47005001c75562ed348efaa2.png
+[运行时间：0.026547s] [吞吐率：37.67req/s] [内存消耗：1,188.59kb] [文件加载：30]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181218',
+    2 => '6bd3398a47005001c75562ed348efaa2.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.ipso.me:8080/index/Conference/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181218/6bd3398a47005001c75562ed348efaa2_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:50:35+08:00 ] 127.0.0.1 GET www.ipso.me:8080/uploads/20181218/3c360228ccdeedd7cf542fc97c61bb7a.png
+[运行时间：0.022112s] [吞吐率：45.22req/s] [内存消耗：1,188.59kb] [文件加载：30]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181218',
+    2 => '3c360228ccdeedd7cf542fc97c61bb7a.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.ipso.me:8080/index/Conference/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181218/3c360228ccdeedd7cf542fc97c61bb7a_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:50:35+08:00 ] 127.0.0.1 GET www.ipso.me:8080/uploads/20181218/0cb33a50d3deb9084c8d3b94da538452.png
+[运行时间：0.029045s] [吞吐率：34.43req/s] [内存消耗：1,188.59kb] [文件加载：30]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181218',
+    2 => '0cb33a50d3deb9084c8d3b94da538452.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.ipso.me:8080/index/Conference/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181218/0cb33a50d3deb9084c8d3b94da538452_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:50:35+08:00 ] 127.0.0.1 GET www.ipso.me:8080/uploads/20181218/6f34558570548b2fd310a9f48ce28094.png
+[运行时间：0.028984s] [吞吐率：34.50req/s] [内存消耗：1,188.59kb] [文件加载：30]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181218',
+    2 => '6f34558570548b2fd310a9f48ce28094.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.ipso.me:8080/index/Conference/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181218/6f34558570548b2fd310a9f48ce28094_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:50:35+08:00 ] 127.0.0.1 GET www.ipso.me:8080/uploads/20181218/a0bd964d07e32e43bf9e7c3621190e54.png
+[运行时间：0.031768s] [吞吐率：31.48req/s] [内存消耗：1,188.59kb] [文件加载：30]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181218',
+    2 => 'a0bd964d07e32e43bf9e7c3621190e54.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.ipso.me:8080/index/Conference/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181218/a0bd964d07e32e43bf9e7c3621190e54_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:50:35+08:00 ] 127.0.0.1 GET www.ipso.me:8080/uploads/20181218/c1f3589e99806e744c0817cb60096cff.png
+[运行时间：0.038110s] [吞吐率：26.24req/s] [内存消耗：1,188.59kb] [文件加载：30]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20181218',
+    2 => 'c1f3589e99806e744c0817cb60096cff.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.ipso.me:8080/index/Conference/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+  '/uploads/20181218/c1f3589e99806e744c0817cb60096cff_png' => '',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:51:01+08:00 ] 127.0.0.1 GET www.ipso.me:8080/index/conference/unit
+[运行时间：21.046043s] [吞吐率：0.05req/s] [内存消耗：2,410.28kb] [文件加载：47]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'conference',
+    2 => 'unit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ipso.me:8080/index/Conference/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+  '/index/conference/unit' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] �������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[E:\xampp\xampp\htdocs\corrosion\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2018-12-22T16:51:08+08:00 ] 127.0.0.1 GET www.ipso.me:8080/index/conference/unit
+[运行时间：0.034575s] [吞吐率：28.92req/s] [内存消耗：2,410.83kb] [文件加载：47]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'conference',
+    2 => 'unit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ipso.me:8080/index/Conference/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+  '/index/conference/unit' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ��֪�������������� [E:\xampp\xampp\htdocs\corrosion\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2018-12-22T16:51:13+08:00 ] 127.0.0.1 GET www.ipso.me:8080/index/Conference/index
+[运行时间：0.030666s] [吞吐率：32.61req/s] [内存消耗：2,410.88kb] [文件加载：47]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Conference',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ipso.me:8080/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+  '/index/Conference/index' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ��֪�������������� [E:\xampp\xampp\htdocs\corrosion\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2018-12-22T16:51:23+08:00 ] 127.0.0.1 GET www.ipso.me:8080/
+[运行时间：0.041173s] [吞吐率：24.29req/s] [内存消耗：2,382.79kb] [文件加载：47]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ��֪�������������� [E:\xampp\xampp\htdocs\corrosion\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2018-12-22T16:51:28+08:00 ] 127.0.0.1 GET www.ipso.me:8080/
+[运行时间：0.030370s] [吞吐率：32.93req/s] [内存消耗：2,383.25kb] [文件加载：47]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ��֪�������������� [E:\xampp\xampp\htdocs\corrosion\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2018-12-22T16:51:30+08:00 ] 127.0.0.1 GET www.ipso.me:8080/
+[运行时间：0.032534s] [吞吐率：30.74req/s] [内存消耗：2,383.25kb] [文件加载：47]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ��֪�������������� [E:\xampp\xampp\htdocs\corrosion\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2018-12-22T16:51:30+08:00 ] 127.0.0.1 GET www.ipso.me:8080/
+[运行时间：0.027035s] [吞吐率：36.99req/s] [内存消耗：2,383.25kb] [文件加载：47]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ��֪�������������� [E:\xampp\xampp\htdocs\corrosion\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2018-12-22T16:51:31+08:00 ] 127.0.0.1 GET www.ipso.me:8080/
+[运行时间：0.042747s] [吞吐率：23.39req/s] [内存消耗：2,383.25kb] [文件加载：47]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ��֪�������������� [E:\xampp\xampp\htdocs\corrosion\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2018-12-22T16:51:31+08:00 ] 127.0.0.1 GET www.ipso.me:8080/
+[运行时间：0.045439s] [吞吐率：22.01req/s] [内存消耗：2,383.25kb] [文件加载：47]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ��֪�������������� [E:\xampp\xampp\htdocs\corrosion\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2018-12-22T16:51:31+08:00 ] 127.0.0.1 GET www.ipso.me:8080/
+[运行时间：0.050006s] [吞吐率：20.00req/s] [内存消耗：2,383.25kb] [文件加载：47]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ��֪�������������� [E:\xampp\xampp\htdocs\corrosion\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2018-12-22T16:51:31+08:00 ] 127.0.0.1 GET www.ipso.me:8080/
+[运行时间：0.026535s] [吞吐率：37.69req/s] [内存消耗：2,383.25kb] [文件加载：47]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ��֪�������������� [E:\xampp\xampp\htdocs\corrosion\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2018-12-22T16:51:55+08:00 ] 127.0.0.1 GET www.ipso.me:8080/
+[运行时间：0.042616s] [吞吐率：23.47req/s] [内存消耗：2,382.79kb] [文件加载：47]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ��֪�������������� [E:\xampp\xampp\htdocs\corrosion\thinkphp\library\think\db\Connection.php:295]
+---------------------------------------------------------------
+[ 2018-12-22T16:52:53+08:00 ] 127.0.0.1 GET www.ipso.me:8080/admin
+[运行时间：0.030748s] [吞吐率：32.52req/s] [内存消耗：1,477.38kb] [文件加载：40]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'purpose' => 'prefetch',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688',
+)
+[ info ] [ PARAM ] array (
+  '/admin' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:52:53+08:00 ] 127.0.0.1 GET www.ipso.me:8080/admin/login/index.html
+[运行时间：0.025968s] [吞吐率：38.51req/s] [内存消耗：1,611.09kb] [文件加载：41]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'purpose' => 'prefetch',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688; PHPSESSID=9d8sk4l2p25qo11giiqi90oql7',
+)
+[ info ] [ PARAM ] array (
+  '/admin/login/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ E:\xampp\xampp\htdocs\corrosion\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] E:\xampp\xampp\htdocs\corrosion\public/../application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:52:54+08:00 ] 127.0.0.1 GET www.ipso.me:8080/captcha.html
+[运行时间：0.021509s] [吞吐率：46.49req/s] [内存消耗：1,222.24kb] [文件加载：29]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.ipso.me:8080/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688; PHPSESSID=9d8sk4l2p25qo11giiqi90oql7',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ E:\xampp\xampp\htdocs\corrosion\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-12-22T16:53:13+08:00 ] 127.0.0.1 POST www.ipso.me:8080/admin/login/index.html?
+[运行时间：0.038803s] [吞吐率：25.77req/s] [内存消耗：2,133.80kb] [文件加载：46]
+[ info ] [ LANG ] E:\xampp\xampp\htdocs\corrosion\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ipso.me:8080',
+  'connection' => 'keep-alive',
+  'content-length' => '34',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://www.ipso.me:8080',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ipso.me:8080/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=6678642688; PHPSESSID=9d8sk4l2p25qo11giiqi90oql7',
+)
+[ info ] [ PARAM ] array (
+  '/admin/login/index_html' => '',
+  'name' => 'admin',
+  'pass' => '12345678',
+  'code' => '8qcv',
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ E:\xampp\xampp\htdocs\corrosion\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ��֪�������������� [E:\xampp\xampp\htdocs\corrosion\thinkphp\library\think\db\Connection.php:295]

@@ -95,31 +95,6 @@
 			})
 		})
 	})
-
-	$(document).ready(e => {
-		$("#image-input").change(e => {
-			let file = document.getElementById("image-input")
-			let data = new FormData()
-			data.append('image', file.files[0])
-			$.ajax({
-				url: '/common/upload/go',
-				data: data,
-				processData: false,
-				contentType: false,
-				async: false,
-				method: 'post',
-				success: res => {
-					res = JSON.parse(res)
-					console.log(res)
-					if (res.status) {
-						$("#image-path").val(res.url)
-						$("#Pic").attr('src', res.url)
-						$("#Pic").show();
-					}
-				}
-			})
-		})
-	})
 </script>
 
 {include file="public/footer"}

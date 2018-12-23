@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:87:"/Users/iimt/Development/PHP/corrosion/public/../application/index/view/equip/index.html";i:1545463515;s:79:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/header.html";i:1542099950;s:76:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/nav.html";i:1541485910;s:79:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/footer.html";i:1542023940;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:87:"/Users/iimt/Development/PHP/corrosion/public/../application/index/view/equip/index.html";i:1545467803;s:79:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/header.html";i:1542099950;s:76:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/nav.html";i:1541485910;s:79:"/Users/iimt/Development/PHP/corrosion/application/index/view/common/footer.html";i:1542023940;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -221,10 +221,15 @@
         let URL = 'http://www.corrinfo.com/Api/Menu/get_equip_data?id=' + id
           + '&start=' + start
           + '&end=' + end
+        // $(".layui-table-tool-self").hide()
         table.render({
           elem: '#test',
           toolbar: 'default',
           url: URL,
+          parseData: d => {
+            $(".layui-table-tool-self").hide()
+            return d
+          },
           cols: [
             [{
                 field: 'id',
@@ -283,6 +288,7 @@
             $(".layui-table-tool .layui-laypage").remove()
             if($(".layui-table-page .layui-laypage"))
               $(".layui-table-tool").prepend($(".layui-table-page .layui-laypage"))
+          $(".layui-table-tool-self").show()
           }
         });
       })

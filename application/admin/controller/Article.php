@@ -60,7 +60,6 @@ class Article extends Common
         if($res) {
           $this -> assign('modifyed', true);
         }
-    
         return $this -> redirect('article/index');
     }
 

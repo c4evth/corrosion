@@ -168,10 +168,15 @@
         let URL = 'http://www.corrinfo.com/Api/Menu/get_equip_data?id=' + id
           + '&start=' + start
           + '&end=' + end
+        // $(".layui-table-tool-self").hide()
         table.render({
           elem: '#test',
           toolbar: 'default',
           url: URL,
+          parseData: d => {
+            $(".layui-table-tool-self").hide()
+            return d
+          },
           cols: [
             [{
                 field: 'id',
@@ -230,6 +235,7 @@
             $(".layui-table-tool .layui-laypage").remove()
             if($(".layui-table-page .layui-laypage"))
               $(".layui-table-tool").prepend($(".layui-table-page .layui-laypage"))
+          $(".layui-table-tool-self").show()
           }
         });
       })

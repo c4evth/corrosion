@@ -66,13 +66,13 @@
 		<nav id="BallNav" class="width-1200 row" style="margin-top:20px;height: 60px;background-color: #D1D1D1;">{include
 			file="conference/nav"}</nav>
 		<!-- content start -->
-		<div class="width-1200 sw row" style="">
+		<div class="width-1200 sw row">
 			<!-- 主体内容 -->
 			<div class="col-md-9" style="min-height: 460px;padding-left: 0px;">
-				<div class="layui-carousel" id="test1" style="">
+				<div class="layui-carousel" id="test1">
 					<div carousel-item style="height: 380px;">
 						{volist name="pic.banner" id="vo"}
-						<div style="">
+						<div>
 							<img src="{$vo}" style="width:772px;" alt="">
 						</div>
 						{/volist}
@@ -159,10 +159,10 @@
 				<a href="/index/enlist/index?id={$currID}" class="btn btn-primary" style="font-size:40px;padding: 10px;padding-left:40px;padding-right: 40px; border-radius: 40px;margin-top: 20px">点击报名</a>
 				<br>
 				<a href=""></a>
-				<a href="" class="btn btn-primary" style="font-size:32px;padding: 10px;padding-left:20px;padding-right: 20px; border-radius: 40px;margin-top: 20px">开票信息表下载</a>
+				<a href="/bill.doc" class="btn btn-primary" style="font-size:32px;padding: 10px;padding-left:20px;padding-right: 20px; border-radius: 40px;margin-top: 20px">开票信息表下载</a>
 				<div class="sideItem">
 					<h4>主办单位</h4>
-					<div style="width: 310px;margin: 0 auto">
+					<div style="margin: 0 auto">
 						<img src="{$base.logo}" alt="">
 					</div>
 				</div>

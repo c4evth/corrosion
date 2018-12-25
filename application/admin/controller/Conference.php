@@ -53,7 +53,12 @@ class Conference extends Common
 			}
 			// 验证完数据后清除token再存入数据库
 			unset($data['__token__']);
-			
+			$data["waittime"] = $data["waittime"].",".$data["waittimes"];
+			$data["theme"] = $data["theme"].",".$data["themes"];
+			unset($data["waittimes"]);
+			unset($data["themes"]);
+			// dump($data);die;
+
 			$model = new Model();
 			$res = $model -> insertOne($data);
 			if(!$res){
@@ -90,6 +95,12 @@ class Conference extends Common
 	public function edit($id){
 		$model = new Model();
 		$oldBall = $model -> getOneByID($id);
+		$themeArr = explode(',',$oldBall["theme"]);
+		$timeArr = explode(',',$oldBall["waittime"]);
+		$oldBall["theme"] = $themeArr[0];
+		$oldBall["themes"] = $themeArr[1];
+		$oldBall["waittime"] = $timeArr[0];
+		$oldBall["waittimes"] = $timeArr[1];
 		$articleModel = new NewsModel();
 		$list = $articleModel -> getAll();
 		if(request() -> isPost()){
@@ -107,6 +118,11 @@ class Conference extends Common
 				return view('result');
 			}
 
+			$data["waittime"] = $data["waittime"].",".$data["waittimes"];
+			$data["theme"] = $data["theme"].",".$data["themes"];
+			unset($data["waittimes"]);
+			unset($data["themes"]);
+			
 			$res = $model -> updateOne($id,$data);
 			if(!$res){
 				$result = "添加编辑失败";

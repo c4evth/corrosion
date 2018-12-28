@@ -46,7 +46,7 @@ class Example extends Common
     return view();
 	}
 	
-	public function list($cid, $page = 1){
+	public function list($cid = 1, $page = 1){
 		$currCid = $cid;
 		$model = new Model();
 		$articleAll = $model -> getCateCard($cid);
